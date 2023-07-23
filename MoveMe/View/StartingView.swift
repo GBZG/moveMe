@@ -44,7 +44,7 @@ private extension StartingView {
             Text("아.. 오늘도 안갔네..")
                 .style(.heading1_Bold)
                 .padding(.bottom)
-            Text("뭅미(MoveMe)는 헬스장, 독서실 등 매일 가기로 약속한 장소에 갈 수 있도록 돕는 알람이에요.")
+            Text("뭅미(MoveMe)는 헬스장, 독서실 등 매일 가기로 약속한 장소에 갈 수 있도록 돕는 습관 형성 서비스예요.")
                 .style()
                 .multilineTextAlignment(.center)
                 .padding([.leading, .trailing], 30)
