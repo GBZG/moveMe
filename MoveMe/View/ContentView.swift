@@ -24,7 +24,3 @@ struct ContentView: View {
         .onDisappear { viewModel.onDisappear() }
     }
 }
-
-
-
-

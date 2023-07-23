@@ -16,8 +16,7 @@ struct AlarmView: View {
             switch alarmStatus {
             case Constant.active: RingingView()
             case Constant.waiting: ChangeView()
-            case Constant.completed: alarmIsCompleted
-            case Constant.discarded: alarmIsDiscarded
+            case Constant.completed: CompletionView()
             case Constant.changed: WaitingView()
             default:
                 ChangeView()
@@ -25,22 +24,4 @@ struct AlarmView: View {
         }
     }
 }
-
-private extension AlarmView {
-    var alarmIsCompleted: some View {
-        VStack {
-            Text("성공했어요!")
-            Text("내일 다시 만나요!")
-            Text("00시에 초기화 됩니다.")
-        }
-    }
-
-    var alarmIsDiscarded: some View {
-        VStack {
-            Text("내일 다시 도전해봐요!")
-            Text("00시에 초기화 됩니다.")
-        }
-    }
-}
-
 
