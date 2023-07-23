@@ -13,9 +13,7 @@ struct ChangeView: View {
     @State private var isSettingButtonTapped = false
     
     var body: some View {
-        NavigationView {
-            bodyView
-        }
+        NavigationView { bodyView }
     }
 }
 

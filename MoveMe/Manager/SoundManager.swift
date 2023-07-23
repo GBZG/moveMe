@@ -34,7 +34,7 @@ class SoundManager {
     }
     
     func playAlarmMusic() {
-        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "theFirstSong", ofType: "wav")!)
+        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "eveningOnTheBeach", ofType: "mp3")!)
         
         do {
             try AVAudioSession.sharedInstance().setCategory(

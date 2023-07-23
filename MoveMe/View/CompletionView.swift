@@ -14,6 +14,7 @@ struct CompletionView: View {
     var body: some View {
         NavigationView { bodyView }
             .onAppear { viewModel.onAppear() }
+            .onDisappear { viewModel.onDisappear() }
     }
 }
 
@@ -46,6 +47,8 @@ private extension CompletionView {
     
     var completion: some View {
         VStack {
+            Text("🎉")
+                .font(.largeTitle)
             Text("축하합니다!")
                 .style(.heading1_Bold)
                 .padding(.bottom)
@@ -55,5 +58,6 @@ private extension CompletionView {
             Text("(알람은 00시에 초기화 됩니다.)")
                 .style(.caption)
         }
+        .padding(.bottom)
     }
 }

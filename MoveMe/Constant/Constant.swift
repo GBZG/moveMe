@@ -44,5 +44,4 @@ extension Constant {
 // MARK: Sound Data
 extension Constant {
     static let durationOfSilentMusic = "60.0"
-    static let durationOfAlarmMusic = "213.636375"
 }

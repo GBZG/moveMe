@@ -16,7 +16,7 @@ final class HapticManager {
     }
 
     func vibration() {
-        if (SoundManager.instance.checkCurrentMusic() == Constant.durationOfAlarmMusic) {
+        if (SoundManager.instance.checkCurrentMusic() != Constant.durationOfSilentMusic) {
             DispatchQueue(label: "vibration").asyncAfter(deadline: .now() + 1) {
                 self.queue.async(execute: self.workItem)
                 self.vibration()

@@ -16,6 +16,7 @@ final class RingingViewModel: ObservableObject {
     @Published var scheduledMinute = UserDefaults.standard.integer(forKey: Constant.scheduledMinute)
 
     func onAppear(_ manager: LocationManager) -> MKCoordinateRegion {
+        runAlarm()
         let region = MKCoordinateRegion(
             center: CLLocationCoordinate2D(
                 latitude: manager.coordinate?.latitude ?? 0 ,
@@ -43,6 +44,12 @@ final class RingingViewModel: ObservableObject {
 }
 
 private extension RingingViewModel {
+    func runAlarm() {
+        SoundManager.instance.stopBackgroundMusic()
+        SoundManager.instance.playAlarmMusic()
+        HapticManager.instance.vibration()
+    }
+    
     // Calculate distance between original coordinate and the user's currnet location in meters.
     func getDistanceInMeters(_ currentLocation: CLLocation) -> Double {
         let savedLatitude = UserDefaults.standard.double(forKey: Constant.latitude)
@@ -60,10 +67,4 @@ private extension RingingViewModel {
         SoundManager.instance.playSilentMusic()
         AlarmManager.instance.completeAlarm()
     }
-    
-//    func discardAlarm() {
-//        SoundManager.instance.stopBackgroundMusic()
-//        SoundManager.instance.playSilentMusic()
-//        AlarmManager.instance.discardAlarm()
-//    }
 }
