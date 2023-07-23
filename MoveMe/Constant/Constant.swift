@@ -45,3 +45,9 @@ extension Constant {
 extension Constant {
     static let durationOfSilentMusic = "60.0"
 }
+
+// MARK: Google Ads
+extension Constant {
+    static let testAdBanner = "ca-app-pub-3940256099942544/2934735716"
+    static let realAdBanner = "ca-app-pub-3550877198529803/9445521542"
+}

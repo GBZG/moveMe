@@ -25,6 +25,7 @@ private extension CompletionView {
             Spacer()
             completion
             Spacer()
+            googleAd
             NavigationLink("", isActive: $isSettingButtonTapped) {
                 SettingView()
             }
@@ -59,5 +60,9 @@ private extension CompletionView {
                 .style(.caption)
         }
         .padding(.bottom)
+    }
+    
+    var googleAd: some View {
+        AdView()
     }
 }

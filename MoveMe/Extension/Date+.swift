@@ -27,7 +27,7 @@ extension Date {
     }
     
     var hourAndMinute: String {
-        var calendar = Calendar.current
+        let calendar = Calendar.current
         let hour = calendar.component(.hour, from: self)
         let minute = calendar.component(.minute, from: self)
         return "\(hour)시 \(minute)분"

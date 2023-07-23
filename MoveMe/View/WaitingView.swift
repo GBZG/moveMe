@@ -24,6 +24,7 @@ private extension WaitingView {
             Spacer()
             waiting
             Spacer()
+            googleAd
             NavigationLink("", isActive: $isSettingButtonTapped) {
                 SettingView()
             }
@@ -42,6 +43,10 @@ private extension WaitingView {
             }
         }
         .padding()
+    }
+    
+    var googleAd: some View {
+        AdView()
     }
     
     var waiting: some View {

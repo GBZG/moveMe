@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import GoogleMobileAds
 
 struct GreetingView: View {
     
     var body: some View {
-        VStack {
+        VStack {            
             Text("환영합니다")
                 .style(.heading1_Bold)
                 .padding(.bottom, 10)

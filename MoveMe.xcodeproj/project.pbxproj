@@ -29,6 +29,8 @@
 		7A28E66B2A6D464C00699DB4 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28E66A2A6D464C00699DB4 /* SettingView.swift */; };
 		7A28E66F2A6D500200699DB4 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28E66E2A6D500200699DB4 /* View+.swift */; };
 		7A28E6712A6D52F700699DB4 /* eveningOnTheBeach.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A28E6702A6D52F700699DB4 /* eveningOnTheBeach.mp3 */; };
+		7A28E6782A6D6E4C00699DB4 /* AdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28E6772A6D6E4C00699DB4 /* AdView.swift */; };
+		7A527E7C2A6D70710014F931 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 7A527E7B2A6D70710014F931 /* GoogleMobileAds */; };
 		7A545D722A6BB7F60092309E /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A545D712A6BB7F60092309E /* ContentViewModel.swift */; };
 		7A545D752A6BC78E0092309E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A545D742A6BC78E0092309E /* Constant.swift */; };
 		7A545D772A6BD5B00092309E /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A545D762A6BD5B00092309E /* AlarmManager.swift */; };
@@ -40,8 +42,6 @@
 		7A7653852A501C8B00670C76 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A7653842A501C8B00670C76 /* Preview Assets.xcassets */; };
 		7A76538D2A501E0E00670C76 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A76538C2A501E0E00670C76 /* LocationManager.swift */; };
 		7A7653932A50265000670C76 /* StartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7653922A50265000670C76 /* StartingView.swift */; };
-		7A7653992A5026EA00670C76 /* TrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7653982A5026EA00670C76 /* TrackingView.swift */; };
-		7A76539B2A502AAD00670C76 /* PairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A76539A2A502AAD00670C76 /* PairView.swift */; };
 		7A76539D2A502E9300670C76 /* RingingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A76539C2A502E9300670C76 /* RingingView.swift */; };
 		7A76539F2A502EC400670C76 /* RingingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A76539E2A502EC400670C76 /* RingingViewModel.swift */; };
 		7A7653A42A5035CD00670C76 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7653A32A5035CD00670C76 /* HapticManager.swift */; };
@@ -72,6 +72,7 @@
 		7A28E66A2A6D464C00699DB4 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		7A28E66E2A6D500200699DB4 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		7A28E6702A6D52F700699DB4 /* eveningOnTheBeach.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = eveningOnTheBeach.mp3; sourceTree = "<group>"; };
+		7A28E6772A6D6E4C00699DB4 /* AdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdView.swift; sourceTree = "<group>"; };
 		7A545D712A6BB7F60092309E /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		7A545D742A6BC78E0092309E /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		7A545D762A6BD5B00092309E /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
@@ -85,8 +86,6 @@
 		7A76538C2A501E0E00670C76 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		7A76538E2A50246000670C76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7A7653922A50265000670C76 /* StartingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingView.swift; sourceTree = "<group>"; };
-		7A7653982A5026EA00670C76 /* TrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingView.swift; sourceTree = "<group>"; };
-		7A76539A2A502AAD00670C76 /* PairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairView.swift; sourceTree = "<group>"; };
 		7A76539C2A502E9300670C76 /* RingingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingingView.swift; sourceTree = "<group>"; };
 		7A76539E2A502EC400670C76 /* RingingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingingViewModel.swift; sourceTree = "<group>"; };
 		7A7653A32A5035CD00670C76 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
@@ -99,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A527E7C2A6D70710014F931 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,9 +116,8 @@
 		7A16AA782A51951F00DCD973 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				7A7653982A5026EA00670C76 /* TrackingView.swift */,
-				7A76539A2A502AAD00670C76 /* PairView.swift */,
 				7A16AA882A51AEF200DCD973 /* CustomButton.swift */,
+				7A28E6772A6D6E4C00699DB4 /* AdView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -257,6 +256,9 @@
 			dependencies = (
 			);
 			name = MoveMe;
+			packageProductDependencies = (
+				7A527E7B2A6D70710014F931 /* GoogleMobileAds */,
+			);
 			productName = MoveMe;
 			productReference = 7A76537A2A501C8900670C76 /* MoveMe.app */;
 			productType = "com.apple.product-type.application";
@@ -285,6 +287,9 @@
 				Base,
 			);
 			mainGroup = 7A7653712A501C8900670C76;
+			packageReferences = (
+				7A527E7A2A6D70710014F931 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = 7A76537B2A501C8900670C76 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -320,11 +325,10 @@
 				7A16AA872A51ACDB00DCD973 /* Date+.swift in Sources */,
 				7A28E65A2A6D030400699DB4 /* Text+.swift in Sources */,
 				7A16AA7C2A519DC600DCD973 /* AlarmViewModel.swift in Sources */,
-				7A76539B2A502AAD00670C76 /* PairView.swift in Sources */,
 				7A28E66B2A6D464C00699DB4 /* SettingView.swift in Sources */,
 				7A16AA802A51A17900DCD973 /* WaitingView.swift in Sources */,
-				7A7653992A5026EA00670C76 /* TrackingView.swift in Sources */,
 				7A545D772A6BD5B00092309E /* AlarmManager.swift in Sources */,
+				7A28E6782A6D6E4C00699DB4 /* AdView.swift in Sources */,
 				7A16AA7E2A51A09E00DCD973 /* ChangeView.swift in Sources */,
 				7A7653802A501C8900670C76 /* ContentView.swift in Sources */,
 				7A28E65C2A6D0AD300699DB4 /* Color+.swift in Sources */,
@@ -483,7 +487,8 @@
 				INFOPLIST_FILE = MoveMe/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "뭅미";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "알람 설정을 위한 위치 사용을 허용하시겠습니까?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = NO;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "맞춤형 광고, 사용자 혜택 제공을 위한 사용 기록 추적을 허용하시겠습니까?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -497,6 +502,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.theo.MoveMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -522,7 +528,8 @@
 				INFOPLIST_FILE = MoveMe/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "뭅미";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "알람 설정을 위한 위치 사용을 허용하시겠습니까?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = NO;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "맞춤형 광고, 사용자 혜택 제공을 위한 사용 기록 추적을 허용하시겠습니까?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -536,6 +543,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.theo.MoveMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -569,6 +577,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7A527E7A2A6D70710014F931 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7A527E7B2A6D70710014F931 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A527E7A2A6D70710014F931 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7A7653722A501C8900670C76 /* Project object */;
 }

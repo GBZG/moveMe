@@ -24,6 +24,7 @@ private extension ChangeView {
             Spacer()
             alarmSetting
             Spacer()
+            googleAd
             NavigationLink("", isActive: $isSettingButtonTapped) {
                 SettingView()
             }
@@ -41,6 +42,10 @@ private extension ChangeView {
             }
         }
         .padding()
+    }
+    
+    var googleAd: some View {
+        AdView()
     }
     
     var alarmSetting: some View {
