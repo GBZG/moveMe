@@ -29,9 +29,9 @@ final class RingingViewModel: ObservableObject {
         isAlertActive = false
     }
     
-    func didTapDiscardButton() {
-        discardAlarm()
-    }
+//    func didTapDiscardButton() {
+//        discardAlarm()
+//    }
 }
 
 private extension RingingViewModel {
@@ -53,9 +53,9 @@ private extension RingingViewModel {
         AlarmManager.instance.completeAlarm()
     }
     
-    func discardAlarm() {
-        SoundManager.instance.stopBackgroundMusic()
-        SoundManager.instance.playSilentMusic()
-        AlarmManager.instance.discardAlarm()
-    }
+//    func discardAlarm() {
+//        SoundManager.instance.stopBackgroundMusic()
+//        SoundManager.instance.playSilentMusic()
+//        AlarmManager.instance.discardAlarm()
+//    }
 }

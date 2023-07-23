@@ -21,9 +21,6 @@ final class AlarmManager: ObservableObject {
     
     func setTimer(_ currentDate: Date) {
         guard timer == nil else { return }
-        print("⭐️⭐️⭐️⭐️⭐️⭐️")
-        print("Alarm Time : \(currentDate.originalAlarmTimeSetting)")
-        print("⭐️⭐️⭐️⭐️⭐️⭐️")
         
         timer = Timer(
             fireAt: currentDate.originalAlarmTimeSetting,
@@ -39,9 +36,6 @@ final class AlarmManager: ObservableObject {
     func changeTimer(_ currentDate: Date) {
         stopPreviousAlarm()
         guard timer == nil else { return }
-        print("⭐️⭐️⭐️⭐️⭐️⭐️")
-        print("Changed Alarm Time : \(currentDate.changedAlarmTimeSetting)")
-        print("⭐️⭐️⭐️⭐️⭐️⭐️")
         
         timer = Timer(
             fireAt: currentDate.changedAlarmTimeSetting,
@@ -60,11 +54,11 @@ final class AlarmManager: ObservableObject {
         resetOnMidNight()
     }
     
-    func discardAlarm() {
-        UserDefaults.standard.set(Constant.discarded, forKey: Constant.alarmStatus)
-        setTomorrowAlarm()
-        resetOnMidNight()
-    }
+//    func discardAlarm() {
+//        UserDefaults.standard.set(Constant.discarded, forKey: Constant.alarmStatus)
+//        setTomorrowAlarm()
+//        resetOnMidNight()
+//    }
 }
 
 private extension AlarmManager {
@@ -81,11 +75,12 @@ private extension AlarmManager {
             repeats: false
         )
         RunLoop.main.add(timer!, forMode: .common)
+        NotificationManager.instance.scheduleNotification(currentDate: Date().originalAlarmForTomorrow)
     }
     
     func resetOnMidNight() {
         let timer = Timer(
-            fireAt: Date().tomorrow,
+            fireAt: Date().endOfDay,
             interval: 0,
             target: self,
             selector: #selector(runStatusReset),

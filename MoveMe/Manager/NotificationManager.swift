@@ -60,6 +60,7 @@ final class NotificationManager: ObservableObject {
     }
     
     func sendResetNotification() {
+        print("Reset Noti Func worked")
         let content = UNMutableNotificationContent()
         content.title = "알람이 준비되었어요!"
         

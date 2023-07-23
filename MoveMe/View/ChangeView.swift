@@ -21,7 +21,7 @@ struct ChangeView: View {
             DatePicker(
                 "",
                 selection: $currentDate,
-                in: currentDate...currentDate.endOfDay,
+                in: Date()...Date().endOfDay,
                 displayedComponents: [.hourAndMinute]
             )
                 .labelsHidden()
