@@ -30,7 +30,7 @@ extension Font {
         }
     }
 
-    static func pretendard(style size: Pretendard) -> Font {
-        return .custom("PretendardVariable", size: size.size)
+    static func pretendard(_ style: Pretendard) -> Font {
+        return .custom("PretendardVariable", size: style.size)
     }
 }

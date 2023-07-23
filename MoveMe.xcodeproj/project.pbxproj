@@ -19,6 +19,8 @@
 		7A16AA872A51ACDB00DCD973 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA862A51ACDB00DCD973 /* Date+.swift */; };
 		7A16AA892A51AEF200DCD973 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA882A51AEF200DCD973 /* CustomButton.swift */; };
 		7A28E6572A6CFC9B00699DB4 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28E6562A6CFC9B00699DB4 /* Font+.swift */; };
+		7A28E65A2A6D030400699DB4 /* Text+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28E6592A6D030400699DB4 /* Text+.swift */; };
+		7A28E65C2A6D0AD300699DB4 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28E65B2A6D0AD300699DB4 /* Color+.swift */; };
 		7A545D702A6B7B720092309E /* theFirstSong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A545D6F2A6B7B720092309E /* theFirstSong.wav */; };
 		7A545D722A6BB7F60092309E /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A545D712A6BB7F60092309E /* ContentViewModel.swift */; };
 		7A545D752A6BC78E0092309E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A545D742A6BC78E0092309E /* Constant.swift */; };
@@ -54,6 +56,8 @@
 		7A16AA882A51AEF200DCD973 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		7A28E6562A6CFC9B00699DB4 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		7A28E6582A6CFE8600699DB4 /* PretendardVariable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardVariable.ttf; sourceTree = "<group>"; };
+		7A28E6592A6D030400699DB4 /* Text+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+.swift"; sourceTree = "<group>"; };
+		7A28E65B2A6D0AD300699DB4 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		7A545D6F2A6B7B720092309E /* theFirstSong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = theFirstSong.wav; sourceTree = "<group>"; };
 		7A545D712A6BB7F60092309E /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		7A545D742A6BC78E0092309E /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 			children = (
 				7A16AA862A51ACDB00DCD973 /* Date+.swift */,
 				7A28E6562A6CFC9B00699DB4 /* Font+.swift */,
+				7A28E6592A6D030400699DB4 /* Text+.swift */,
+				7A28E65B2A6D0AD300699DB4 /* Color+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -282,6 +288,7 @@
 			files = (
 				7A545D7B2A6CD3DF0092309E /* CompletionViewModel.swift in Sources */,
 				7A16AA872A51ACDB00DCD973 /* Date+.swift in Sources */,
+				7A28E65A2A6D030400699DB4 /* Text+.swift in Sources */,
 				7A16AA7C2A519DC600DCD973 /* AlarmViewModel.swift in Sources */,
 				7A76539B2A502AAD00670C76 /* PairView.swift in Sources */,
 				7A16AA802A51A17900DCD973 /* WaitingView.swift in Sources */,
@@ -289,6 +296,7 @@
 				7A545D772A6BD5B00092309E /* AlarmManager.swift in Sources */,
 				7A16AA7E2A51A09E00DCD973 /* ChangeView.swift in Sources */,
 				7A7653802A501C8900670C76 /* ContentView.swift in Sources */,
+				7A28E65C2A6D0AD300699DB4 /* Color+.swift in Sources */,
 				7A16AA702A518C6000DCD973 /* SoundManager.swift in Sources */,
 				7A16AA7A2A5196BD00DCD973 /* StartingViewModel.swift in Sources */,
 				7A545D792A6CD26A0092309E /* CompletionView.swift in Sources */,

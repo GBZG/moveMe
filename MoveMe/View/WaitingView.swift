@@ -13,10 +13,6 @@ struct WaitingView: View {
     
     var body: some View {
         VStack {
-            Image("Mangom")
-                .resizable()
-                .frame(width: 100, height: 100, alignment: .center)
-        
             Text("알람 기다리는 중...")
             
             if (alarmStatus == Constant.changed) {
