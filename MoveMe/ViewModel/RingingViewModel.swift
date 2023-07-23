@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import CoreLocation
+import MapKit
 
 final class RingingViewModel: ObservableObject {
     @Published var distance: Int? = nil
@@ -15,6 +15,17 @@ final class RingingViewModel: ObservableObject {
     @Published var scheduledHour = UserDefaults.standard.integer(forKey: Constant.scheduledHour)
     @Published var scheduledMinute = UserDefaults.standard.integer(forKey: Constant.scheduledMinute)
 
+    func onAppear(_ manager: LocationManager) -> MKCoordinateRegion {
+        let region = MKCoordinateRegion(
+            center: CLLocationCoordinate2D(
+                latitude: manager.coordinate?.latitude ?? 0 ,
+                longitude: manager.coordinate?.longitude ?? 0),
+            span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
+        )
+        
+        return region
+    }
+    
     func didTapCompleteButton(currentLocation: CLLocation) {
         let distance = getDistanceInMeters(currentLocation)
         if (distance <= 12) {
@@ -29,9 +40,6 @@ final class RingingViewModel: ObservableObject {
         isAlertActive = false
     }
     
-//    func didTapDiscardButton() {
-//        discardAlarm()
-//    }
 }
 
 private extension RingingViewModel {

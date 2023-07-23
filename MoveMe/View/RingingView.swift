@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
-import CoreLocation
+import MapKit
 
 struct RingingView: View {
     @EnvironmentObject private var manager: LocationManager
     @ObservedObject private var viewModel = RingingViewModel()
+    @State var region: MKCoordinateRegion = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 0, longitude: 0),
+        span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
+    )
     private var currentLocation: CLLocation {
         CLLocation(
             latitude: manager.coordinate?.latitude ?? 0,
@@ -19,26 +23,36 @@ struct RingingView: View {
     }
     
     var body: some View {
-        alarmIsOn
+        VStack {
+            map
+            alarmIsOn
+        }
+        .onAppear { region = viewModel.onAppear(manager) }
     }
 }
 
 private extension RingingView {
+    var map: some View {
+        VStack {
+            Text("움직일 시간이에요!")
+                .style(.heading1_Bold)
+            Map(
+                coordinateRegion: $region,
+                showsUserLocation: true,
+                userTrackingMode: .constant(.follow)
+            )
+            .frame(height: 250)
+        }
+        .padding(.bottom)
+    }
+    
     var alarmIsOn: some View {
         VStack {
-            Text("현재위치")
-            TrackingView()
+            Text("남은 거리")
+                .padding(.bottom, 3)
+            Text(" \(viewModel.distance ?? 0)m")
+                .style(.heading2_Bold)
                 .padding(.bottom)
-            
-            Text("도착 위치")
-            PairView(
-                leftText: "위도",
-                rightText: String(UserDefaults.standard.double(forKey: Constant.latitude))
-            )
-            PairView(
-                leftText: "경도",
-                rightText: String(UserDefaults.standard.double(forKey: Constant.longitude))
-            )
             
             CustomButton(text: "완료하기") {
                 viewModel.didTapCompleteButton(currentLocation: currentLocation)
