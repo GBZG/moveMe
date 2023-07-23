@@ -48,6 +48,12 @@ final class AlarmManager: ObservableObject {
         RunLoop.main.add(timer!, forMode: .common)
     }
     
+    func setTheFirstAlarmonTomorrow() {
+        UserDefaults.standard.set(Constant.waiting, forKey: Constant.alarmStatus)
+        setTomorrowAlarm()
+        resetOnMidNight()
+    }
+    
     func completeAlarm() {
         UserDefaults.standard.set(Constant.completed, forKey: Constant.alarmStatus)
         setTomorrowAlarm()

@@ -10,7 +10,7 @@
 		7A16AA702A518C6000DCD973 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA6F2A518C6000DCD973 /* SoundManager.swift */; };
 		7A16AA732A518EC000DCD973 /* silentSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A16AA712A518EC000DCD973 /* silentSound.wav */; };
 		7A16AA772A5194C800DCD973 /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA762A5194C800DCD973 /* SampleModel.swift */; };
-		7A16AA7A2A5196BD00DCD973 /* StartingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA792A5196BD00DCD973 /* StartingViewModel.swift */; };
+		7A16AA7A2A5196BD00DCD973 /* InitialAlarmSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA792A5196BD00DCD973 /* InitialAlarmSettingViewModel.swift */; };
 		7A16AA7C2A519DC600DCD973 /* AlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA7B2A519DC600DCD973 /* AlarmViewModel.swift */; };
 		7A16AA7E2A51A09E00DCD973 /* ChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA7D2A51A09E00DCD973 /* ChangeView.swift */; };
 		7A16AA802A51A17900DCD973 /* WaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA7F2A51A17900DCD973 /* WaitingView.swift */; };
@@ -21,6 +21,11 @@
 		7A28E6572A6CFC9B00699DB4 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28E6562A6CFC9B00699DB4 /* Font+.swift */; };
 		7A28E65A2A6D030400699DB4 /* Text+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28E6592A6D030400699DB4 /* Text+.swift */; };
 		7A28E65C2A6D0AD300699DB4 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28E65B2A6D0AD300699DB4 /* Color+.swift */; };
+		7A28E65E2A6D0F4700699DB4 /* InitialAlarmSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28E65D2A6D0F4700699DB4 /* InitialAlarmSettingView.swift */; };
+		7A28E6602A6D0FAE00699DB4 /* GreetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28E65F2A6D0FAE00699DB4 /* GreetingView.swift */; };
+		7A28E6652A6D183100699DB4 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A28E6632A6D11DD00699DB4 /* Pretendard-Bold.otf */; };
+		7A28E6662A6D183100699DB4 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A28E6622A6D11DD00699DB4 /* Pretendard-Medium.otf */; };
+		7A28E6672A6D183100699DB4 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A28E6642A6D11DD00699DB4 /* Pretendard-Regular.otf */; };
 		7A545D702A6B7B720092309E /* theFirstSong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A545D6F2A6B7B720092309E /* theFirstSong.wav */; };
 		7A545D722A6BB7F60092309E /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A545D712A6BB7F60092309E /* ContentViewModel.swift */; };
 		7A545D752A6BC78E0092309E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A545D742A6BC78E0092309E /* Constant.swift */; };
@@ -46,7 +51,7 @@
 		7A16AA6F2A518C6000DCD973 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		7A16AA712A518EC000DCD973 /* silentSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = silentSound.wav; sourceTree = "<group>"; };
 		7A16AA762A5194C800DCD973 /* SampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
-		7A16AA792A5196BD00DCD973 /* StartingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingViewModel.swift; sourceTree = "<group>"; };
+		7A16AA792A5196BD00DCD973 /* InitialAlarmSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialAlarmSettingViewModel.swift; sourceTree = "<group>"; };
 		7A16AA7B2A519DC600DCD973 /* AlarmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewModel.swift; sourceTree = "<group>"; };
 		7A16AA7D2A51A09E00DCD973 /* ChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeView.swift; sourceTree = "<group>"; };
 		7A16AA7F2A51A17900DCD973 /* WaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingView.swift; sourceTree = "<group>"; };
@@ -55,9 +60,13 @@
 		7A16AA862A51ACDB00DCD973 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		7A16AA882A51AEF200DCD973 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		7A28E6562A6CFC9B00699DB4 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
-		7A28E6582A6CFE8600699DB4 /* PretendardVariable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardVariable.ttf; sourceTree = "<group>"; };
 		7A28E6592A6D030400699DB4 /* Text+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+.swift"; sourceTree = "<group>"; };
 		7A28E65B2A6D0AD300699DB4 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		7A28E65D2A6D0F4700699DB4 /* InitialAlarmSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialAlarmSettingView.swift; sourceTree = "<group>"; };
+		7A28E65F2A6D0FAE00699DB4 /* GreetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingView.swift; sourceTree = "<group>"; };
+		7A28E6622A6D11DD00699DB4 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		7A28E6632A6D11DD00699DB4 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		7A28E6642A6D11DD00699DB4 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		7A545D6F2A6B7B720092309E /* theFirstSong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = theFirstSong.wav; sourceTree = "<group>"; };
 		7A545D712A6BB7F60092309E /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		7A545D742A6BC78E0092309E /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -121,6 +130,16 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		7A28E6612A6D111500699DB4 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7A28E6632A6D11DD00699DB4 /* Pretendard-Bold.otf */,
+				7A28E6622A6D11DD00699DB4 /* Pretendard-Medium.otf */,
+				7A28E6642A6D11DD00699DB4 /* Pretendard-Regular.otf */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		7A545D732A6BC76D0092309E /* Constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,7 +171,6 @@
 				7A7653812A501C8B00670C76 /* Assets.xcassets */,
 				7A16AA712A518EC000DCD973 /* silentSound.wav */,
 				7A545D6F2A6B7B720092309E /* theFirstSong.wav */,
-				7A28E6582A6CFE8600699DB4 /* PretendardVariable.ttf */,
 				7A76537D2A501C8900670C76 /* MoveMeApp.swift */,
 				7A76538F2A50262200670C76 /* View */,
 				7A76538B2A501DEF00670C76 /* ViewModel */,
@@ -160,6 +178,7 @@
 				7A7653A02A50359100670C76 /* Manager */,
 				7A16AA852A51ACD000DCD973 /* Extension */,
 				7A545D732A6BC76D0092309E /* Constant */,
+				7A28E6612A6D111500699DB4 /* Source */,
 				7A7653832A501C8B00670C76 /* Preview Content */,
 			);
 			path = MoveMe;
@@ -178,7 +197,7 @@
 			children = (
 				7A545D712A6BB7F60092309E /* ContentViewModel.swift */,
 				7A16AA7B2A519DC600DCD973 /* AlarmViewModel.swift */,
-				7A16AA792A5196BD00DCD973 /* StartingViewModel.swift */,
+				7A16AA792A5196BD00DCD973 /* InitialAlarmSettingViewModel.swift */,
 				7A16AA832A51A60400DCD973 /* ChangeViewModel.swift */,
 				7A76539E2A502EC400670C76 /* RingingViewModel.swift */,
 				7A16AA812A51A29300DCD973 /* WaitingViewModel.swift */,
@@ -194,10 +213,12 @@
 				7A76537F2A501C8900670C76 /* ContentView.swift */,
 				7A7653A72A5042E900670C76 /* AlarmView.swift */,
 				7A7653922A50265000670C76 /* StartingView.swift */,
+				7A28E65D2A6D0F4700699DB4 /* InitialAlarmSettingView.swift */,
 				7A16AA7D2A51A09E00DCD973 /* ChangeView.swift */,
 				7A76539C2A502E9300670C76 /* RingingView.swift */,
 				7A16AA7F2A51A17900DCD973 /* WaitingView.swift */,
 				7A545D782A6CD26A0092309E /* CompletionView.swift */,
+				7A28E65F2A6D0FAE00699DB4 /* GreetingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -273,9 +294,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A545D702A6B7B720092309E /* theFirstSong.wav in Resources */,
+				7A28E6652A6D183100699DB4 /* Pretendard-Bold.otf in Resources */,
 				7A7653852A501C8B00670C76 /* Preview Assets.xcassets in Resources */,
 				7A7653822A501C8B00670C76 /* Assets.xcassets in Resources */,
+				7A28E6672A6D183100699DB4 /* Pretendard-Regular.otf in Resources */,
 				7A16AA732A518EC000DCD973 /* silentSound.wav in Resources */,
+				7A28E6662A6D183100699DB4 /* Pretendard-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,12 +322,13 @@
 				7A7653802A501C8900670C76 /* ContentView.swift in Sources */,
 				7A28E65C2A6D0AD300699DB4 /* Color+.swift in Sources */,
 				7A16AA702A518C6000DCD973 /* SoundManager.swift in Sources */,
-				7A16AA7A2A5196BD00DCD973 /* StartingViewModel.swift in Sources */,
+				7A16AA7A2A5196BD00DCD973 /* InitialAlarmSettingViewModel.swift in Sources */,
 				7A545D792A6CD26A0092309E /* CompletionView.swift in Sources */,
 				7A16AA772A5194C800DCD973 /* SampleModel.swift in Sources */,
 				7A545D752A6BC78E0092309E /* Constant.swift in Sources */,
 				7A76539F2A502EC400670C76 /* RingingViewModel.swift in Sources */,
 				7A7653A62A503D7B00670C76 /* NotificationManager.swift in Sources */,
+				7A28E65E2A6D0F4700699DB4 /* InitialAlarmSettingView.swift in Sources */,
 				7A7653932A50265000670C76 /* StartingView.swift in Sources */,
 				7A76537E2A501C8900670C76 /* MoveMeApp.swift in Sources */,
 				7A7653A42A5035CD00670C76 /* HapticManager.swift in Sources */,
@@ -311,6 +336,7 @@
 				7A76539D2A502E9300670C76 /* RingingView.swift in Sources */,
 				7A28E6572A6CFC9B00699DB4 /* Font+.swift in Sources */,
 				7A16AA892A51AEF200DCD973 /* CustomButton.swift in Sources */,
+				7A28E6602A6D0FAE00699DB4 /* GreetingView.swift in Sources */,
 				7A545D722A6BB7F60092309E /* ContentViewModel.swift in Sources */,
 				7A7653A82A5042E900670C76 /* AlarmView.swift in Sources */,
 				7A76538D2A501E0E00670C76 /* LocationManager.swift in Sources */,

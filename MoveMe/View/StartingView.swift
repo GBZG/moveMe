@@ -6,52 +6,54 @@
 //
 
 import SwiftUI
-import CoreLocation
-import BackgroundTasks
 
 struct StartingView: View {
-    @EnvironmentObject private var manager: LocationManager
-    @ObservedObject private var viewModel = StartingViewModel()
-    @State private var currentDate = Date()
     @State private var selection: Int = 1
     
     var body: some View {
-        TabView(selection: $selection) {
-            introView.tag(1)
-            settingView.tag(2)
+        VStack(spacing: 0) {
+            progressBar
+            TabView(selection: $selection) {
+                greetingView.tag(1)
+                introView.tag(2)
+                initialSettingView.tag(3)
+            }
+            .tabViewStyle(.page(indexDisplayMode: .never))
         }
-        .tabViewStyle(.page)
     }
 }
 
 private extension StartingView {
-    var introView: some View {
-        VStack {
-            Text("환영합니다")
-            Text("뭅미를 시작합니다.")
-        }
-    }
-    var settingView: some View {
-        VStack {
-            Text("매일 가야 하는 장소에서 알람을 설정해주세요.")
-                .padding()
-            Text("기본 알람 시간을 설정해주세요.")
-            DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
-                .labelsHidden()
-                .datePickerStyle(.wheel)
-            
-            Text("현재위치")
-            TrackingView()
-                .padding(.bottom)
-            
-            // Create Alarm
-            CustomButton(text: "설정하기") {
-                viewModel.didTapCreateAlarmButton(
-                    currentDate: currentDate,
-                    latitude: manager.coordinate?.latitude,
-                    longitude: manager.coordinate?.longitude
-                )
+    var progressBar: some View {
+        ZStack(alignment: .leading) {
+            Rectangle()
+                .frame(height: 3)
+                .foregroundColor(.white)
+            withAnimation(.default) {
+                Rectangle()
+                    .frame(width: Constant.screenWidth * (CGFloat(selection) / 3), height: 3)
+                    .foregroundColor(.mainBlue)
             }
         }
+    }
+    var greetingView: some View {
+        GreetingView()
+    }
+    var introView: some View {
+        VStack {
+            Text("아.. 오늘도 안갔네..")
+                .style(.heading1_Bold)
+                .padding(.bottom)
+            Text("뭅미(MoveMe)는 헬스장, 독서실 등 매일 가기로 약속한 장소에 갈 수 있도록 돕는 알람이에요.")
+                .style()
+                .multilineTextAlignment(.center)
+                .padding([.leading, .trailing], 30)
+                .padding(.bottom, 10)
+            Text("뭅미와 함께 실천하는 습관을 만들어보세요.")
+                .style()
+        }
+    }
+    var initialSettingView: some View {
+        InitialAlarmSettingView()
     }
 }

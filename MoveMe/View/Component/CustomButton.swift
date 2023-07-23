@@ -23,7 +23,7 @@ struct CustomButton: View {
                 .foregroundColor(.white)
                 .padding(.vertical, 14)
                 .padding(.horizontal, 100)
-                .background(.purple)
+                .background(Color.mainBlue)
                 .cornerRadius(12)
             }
     }

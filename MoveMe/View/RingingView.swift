@@ -40,34 +40,14 @@ private extension RingingView {
                 rightText: String(UserDefaults.standard.double(forKey: Constant.longitude))
             )
             
-            Button {
+            CustomButton(text: "완료하기") {
                 viewModel.didTapCompleteButton(currentLocation: currentLocation)
-            } label: {
-                Text("완료하기")
-                    .font(.body)
-                    .foregroundColor(.white)
-                    .padding(.vertical, 14)
-                    .padding(.horizontal, 100)
-                    .background(.purple)
-                    .cornerRadius(12)
             }
             .alert("더 가까이 가세요", isPresented: $viewModel.isAlertActive) {
                 Button("확인") { viewModel.tapAlertCloseButton() }
             } message: {
                 Text("남은 거리 \(viewModel.distance ?? 0)m")
             }
-
-//            Button {
-//                viewModel.didTapDiscardButton()
-//            } label: {
-//                Text("내일 다시 도전하기")
-//                    .font(.body)
-//                    .foregroundColor(.white)
-//                    .padding(.vertical, 14)
-//                    .padding(.horizontal, 100)
-//                    .background(.red)
-//                    .cornerRadius(12)
-//            }
         }
     }
 }
