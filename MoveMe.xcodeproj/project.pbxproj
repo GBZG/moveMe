@@ -18,6 +18,7 @@
 		7A16AA842A51A60400DCD973 /* ChangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA832A51A60400DCD973 /* ChangeViewModel.swift */; };
 		7A16AA872A51ACDB00DCD973 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA862A51ACDB00DCD973 /* Date+.swift */; };
 		7A16AA892A51AEF200DCD973 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA882A51AEF200DCD973 /* CustomButton.swift */; };
+		7A28E6572A6CFC9B00699DB4 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28E6562A6CFC9B00699DB4 /* Font+.swift */; };
 		7A545D702A6B7B720092309E /* theFirstSong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A545D6F2A6B7B720092309E /* theFirstSong.wav */; };
 		7A545D722A6BB7F60092309E /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A545D712A6BB7F60092309E /* ContentViewModel.swift */; };
 		7A545D752A6BC78E0092309E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A545D742A6BC78E0092309E /* Constant.swift */; };
@@ -51,6 +52,8 @@
 		7A16AA832A51A60400DCD973 /* ChangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeViewModel.swift; sourceTree = "<group>"; };
 		7A16AA862A51ACDB00DCD973 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		7A16AA882A51AEF200DCD973 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		7A28E6562A6CFC9B00699DB4 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
+		7A28E6582A6CFE8600699DB4 /* PretendardVariable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardVariable.ttf; sourceTree = "<group>"; };
 		7A545D6F2A6B7B720092309E /* theFirstSong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = theFirstSong.wav; sourceTree = "<group>"; };
 		7A545D712A6BB7F60092309E /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		7A545D742A6BC78E0092309E /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -107,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				7A16AA862A51ACDB00DCD973 /* Date+.swift */,
+				7A28E6562A6CFC9B00699DB4 /* Font+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -142,6 +146,7 @@
 				7A7653812A501C8B00670C76 /* Assets.xcassets */,
 				7A16AA712A518EC000DCD973 /* silentSound.wav */,
 				7A545D6F2A6B7B720092309E /* theFirstSong.wav */,
+				7A28E6582A6CFE8600699DB4 /* PretendardVariable.ttf */,
 				7A76537D2A501C8900670C76 /* MoveMeApp.swift */,
 				7A76538F2A50262200670C76 /* View */,
 				7A76538B2A501DEF00670C76 /* ViewModel */,
@@ -296,6 +301,7 @@
 				7A7653A42A5035CD00670C76 /* HapticManager.swift in Sources */,
 				7A16AA842A51A60400DCD973 /* ChangeViewModel.swift in Sources */,
 				7A76539D2A502E9300670C76 /* RingingView.swift in Sources */,
+				7A28E6572A6CFC9B00699DB4 /* Font+.swift in Sources */,
 				7A16AA892A51AEF200DCD973 /* CustomButton.swift in Sources */,
 				7A545D722A6BB7F60092309E /* ContentViewModel.swift in Sources */,
 				7A7653A82A5042E900670C76 /* AlarmView.swift in Sources */,
