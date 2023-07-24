@@ -38,16 +38,7 @@ private extension WaitingView {
             Text("알람을 기다리는 중이에요...")
                 .style(.body3_Regular)
                 .padding(.bottom, 5)
-            
-            TimelineView(.periodic(from: .now, by: 1)) { _ in
-                HStack {
-                    Spacer()
-                    Text(viewModel.nextAlarm, style: .timer)
-                        .style(.heading1_Bold, .mainNavy)
-                    Spacer()
-                }
-            }
-            
+                        
             Spacer()
         }
     }
