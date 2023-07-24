@@ -16,15 +16,15 @@ struct MoveMeApp: App {
             ContentView()
                 .onReceive(
                     NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
-                    ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in })
-                }
+                        ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in })
+                    }
         }
     }
     
     init() {
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-          ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in })
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in })
         }
     }
 }

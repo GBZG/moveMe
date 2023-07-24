@@ -10,7 +10,7 @@ import CoreLocation
 
 struct ContentView: View {
     @StateObject private var viewModel = ContentViewModel()
-    @AppStorage("isAlarmSet") private var isAlarmSet = false
+    @AppStorage(Constant.isAlarmSet) private var isAlarmSet = false
     
     var body: some View {
         VStack {
