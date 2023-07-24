@@ -48,7 +48,7 @@ private extension InitialAlarmSettingViewModel {
         
         if (Date() >= currentDate) {
             // When the user select past time. Then set tomorrow alarm
-            AlarmManager.instance.setTheFirstAlarmonTomorrow()
+            AlarmManager.instance.setTimer(currentDate.tomorrow)
         } else {
             AlarmManager.instance.setTimer(currentDate)
         }

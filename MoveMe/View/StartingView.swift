@@ -41,16 +41,14 @@ private extension StartingView {
     }
     var introView: some View {
         VStack {
-            Text("아.. 오늘도 안갔네..")
-                .style(.heading1_Bold)
-                .padding(.bottom)
-            Text("뭅미(MoveMe)는 헬스장, 독서실 등 매일 가기로 약속한 장소에 갈 수 있도록 돕는 습관 형성 서비스예요.")
-                .style()
-                .multilineTextAlignment(.center)
-                .padding([.leading, .trailing], 30)
+            Text("이제는 나도 갓생 마스터!")
+                .style(.heading3_Bold, .mainBlue)
                 .padding(.bottom, 10)
-            Text("뭅미와 함께 실천하는 습관을 만들어보세요.")
-                .style()
+            Text("원하는 장소에서 알람을 설정해보세요\n반드시 도착할 수 있게 도와드릴게요")
+                .style(.body2_Bold)
+                .padding(.bottom, 40)
+                .multilineTextAlignment(.center)
+                .lineSpacing(3)
         }
     }
     var initialSettingView: some View {

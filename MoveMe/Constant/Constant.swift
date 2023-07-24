@@ -20,6 +20,7 @@ extension Constant {
     static let scheduledMinute = "scheduledMinute"
     static let originalHour = "originalHour"
     static let originalMinute = "originalMinute"
+    static let nextAlarm = "nextAlarm"
     
     static let active = "active"
     static let waiting = "waiting"
@@ -49,4 +50,11 @@ extension Constant {
 extension Constant {
     static let testAdBanner = "ca-app-pub-3940256099942544/2934735716"
     static let realAdBanner = "ca-app-pub-3550877198529803/9445521542"
+}
+
+// MARK: Font
+extension Constant {
+    static let pretendardBold = "Pretendard-Bold"
+    static let pretendardMedium = "Pretendard-Medium"
+    static let pretendardRegular = "Pretendard-Regular"
 }

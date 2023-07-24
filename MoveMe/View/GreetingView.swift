@@ -11,14 +11,24 @@ import GoogleMobileAds
 struct GreetingView: View {
     
     var body: some View {
-        VStack {            
-            Text("환영합니다")
-                .style(.heading1_Bold)
-                .padding(.bottom, 10)
-            
-            Text("실천하는 습관 만들기\n뭅미를 시작합니다.")
-                .style()
-                .multilineTextAlignment(.center)
+        VStack {
+            Text("오늘도 못갔네")
+                .style(.body1_Bold, .mainGray)
+            Text("귀찮아")
+                .style(.body1_Bold, .mainGray)
+            Text("내일 해야지")
+                .style(.body1_Bold, .mainGray)
+            Text("비가 와서 나가기 싫어")
+                .style(.body1_Bold, .mainGray)
+                .padding(.bottom)
+
+            Text("실패는 이제 그만")
+                .style(.heading3_Bold, .mainBlue)
+                .padding(.bottom, 5)
+            Text("뭅미는 여러분을 움직이게 만듭니다")
+                .style(.body1_Bold)
+                .padding(.bottom, 40)
         }
     }
 }
+

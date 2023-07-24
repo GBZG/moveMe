@@ -16,6 +16,11 @@ final class ChangeViewModel: ObservableObject {
         format: "%02d",
         UserDefaults.standard.integer(forKey: Constant.scheduledMinute)
     )
+    @Published var nextAlarm = Date()
+    
+    func onAppear() {
+        calculateNextAlarm()
+    }
     
     func didTapAlarmChangeButton(_ currentDate: Date) {
         changeAlarm(currentDate)
@@ -24,6 +29,13 @@ final class ChangeViewModel: ObservableObject {
 }
 
 extension ChangeViewModel {
+    func calculateNextAlarm() {
+        guard let alarm = UserDefaults.standard.object(forKey: Constant.nextAlarm) as? Date
+        else { return }
+        
+        nextAlarm = alarm
+    }
+    
     func changeAlarm(_ currentDate: Date) {
         let hour = Calendar.current.component(.hour, from: currentDate)
         let minute = Calendar.current.component(.minute, from: currentDate)

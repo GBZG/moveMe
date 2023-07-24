@@ -24,4 +24,15 @@ final class WaitingViewModel: ObservableObject {
         format: "%02d",
         UserDefaults.standard.integer(forKey: Constant.scheduledMinute)
     )
+    @Published var nextAlarm = Date()
+    
+    func onAppear() {
+        calculateTimeLeft()
+    }
+}
+
+private extension WaitingViewModel {
+    func calculateTimeLeft() {
+        nextAlarm = Date().changedAlarmTimeSetting
+    }
 }

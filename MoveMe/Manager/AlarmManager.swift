@@ -20,67 +20,27 @@ final class AlarmManager: ObservableObject {
     var timer: Timer?
     
     func setTimer(_ currentDate: Date) {
-        guard timer == nil else { return }
-        
-        timer = Timer(
-            fireAt: currentDate.originalAlarmTimeSetting,
-            interval: 0,
-            target: self,
-            selector: #selector(runAlarm),
-            userInfo: nil,
-            repeats: false
-        )
-        RunLoop.main.add(timer!, forMode: .common)
+        runTimer(currentDate.originalAlarmTimeSetting)
     }
     
     func changeTimer(_ currentDate: Date) {
-        stopPreviousAlarm()
         guard timer == nil else { return }
+        stopPreviousAlarm()
+        runTimer(currentDate.changedAlarmTimeSetting)
+    }
         
-        timer = Timer(
-            fireAt: currentDate.changedAlarmTimeSetting,
-            interval: 0,
-            target: self,
-            selector: #selector(runAlarm),
-            userInfo: nil,
-            repeats: false
-        )
-        RunLoop.main.add(timer!, forMode: .common)
-    }
-    
-    func setTheFirstAlarmonTomorrow() {
-        UserDefaults.standard.set(Constant.waiting, forKey: Constant.alarmStatus)
-        setTomorrowAlarm()
-        resetOnMidNight()
-    }
-    
     func completeAlarm() {
         UserDefaults.standard.set(Constant.completed, forKey: Constant.alarmStatus)
         setTomorrowAlarm()
         resetOnMidNight()
     }
-    
-//    func discardAlarm() {
-//        UserDefaults.standard.set(Constant.discarded, forKey: Constant.alarmStatus)
-//        setTomorrowAlarm()
-//        resetOnMidNight()
-//    }
 }
 
 private extension AlarmManager {
     func setTomorrowAlarm() {
-        stopPreviousAlarm()
         guard timer == nil else { return }
-        
-        timer = Timer(
-            fireAt: Date().originalAlarmForTomorrow,
-            interval: 0,
-            target: self,
-            selector: #selector(runAlarm),
-            userInfo: nil,
-            repeats: false
-        )
-        RunLoop.main.add(timer!, forMode: .common)
+        stopPreviousAlarm()
+        runTimer(Date().originalAlarmForTomorrow)
         NotificationManager.instance.scheduleNotification(currentDate: Date().originalAlarmForTomorrow)
     }
     
@@ -94,6 +54,22 @@ private extension AlarmManager {
             repeats: false
         )
         RunLoop.main.add(timer, forMode: .common)
+    }
+    
+    func runTimer(_ date: Date) {
+        guard timer == nil else { return }
+        
+        timer = Timer(
+            fireAt: date,
+            interval: 0,
+            target: self,
+            selector: #selector(runAlarm),
+            userInfo: nil,
+            repeats: false
+        )
+        
+        RunLoop.main.add(timer!, forMode: .common)
+        UserDefaults.standard.set(date, forKey: Constant.nextAlarm)
     }
 
     @objc func runAlarm() {

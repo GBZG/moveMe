@@ -14,17 +14,21 @@ struct ChangeView: View {
     var body: some View {
         alarmSetting
             .navigationBarHidden(true)
+            .onAppear { viewModel.onAppear() }
     }
 }
 
 private extension ChangeView {
     var alarmSetting: some View {
         VStack {
+            Spacer()
+            Text("\(viewModel.nextAlarm.koreanDateForm)")
+                .style(.body3_Regular)
             Text("\(viewModel.scheduledHour) : \(viewModel.scheduledMinute)")
-                .style(.heading1_Bold)
-                .padding(.bottom, 10)
-            Text("오늘만 시간을 변경할까요?\n설정하지 않으면 원래 시간으로 알려드려요.")
-                .padding()
+                .font(.custom(Constant.pretendardBold, size: 48))
+                .padding(.bottom, 20)
+            Text("하루 한 번 시간을 변경할 수 있어요.")
+                .style(.body3_Regular)
             
             DatePicker(
                 "",
@@ -35,10 +39,11 @@ private extension ChangeView {
             .labelsHidden()
             .datePickerStyle(.wheel)
             
+            Spacer()
+            
             CustomButton(text: "변경하기") {
                 viewModel.didTapAlarmChangeButton(currentDate)
             }
         }
-        
     }
 }

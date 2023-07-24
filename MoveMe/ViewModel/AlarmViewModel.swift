@@ -25,12 +25,9 @@ private extension AlarmViewModel {
     }
     
     func calculateNextAlarm(_ alarmStatus: String) {
-        if (alarmStatus == Constant.completed) {
-            nextAlarm = Date().originalAlarmForTomorrow
-        } else if (alarmStatus == Constant.changed) {
-            nextAlarm = Date().changedAlarmTimeSetting
-        } else {
-            nextAlarm = Date().originalAlarmTimeSetting
-        }
+        guard let alarm = UserDefaults.standard.object(forKey: Constant.nextAlarm) as? Date
+        else { return }
+        
+        nextAlarm = alarm
     }
 }

@@ -33,13 +33,12 @@ extension Date {
         return "\(hour):\(minute)"
     }
     
-    var nextAlarmDisplay: String {
+    var koreanDateForm: String {
         let calendar = Calendar.current
+        let year = calendar.component(.year, from: self)
         let month = calendar.component(.month, from: self)
         let day = calendar.component(.day, from: self)
-        let hour = calendar.component(.hour, from: self)
-        let minute = calendar.component(.minute, from: self)
-        return "\(month)월\(day)일 \(hour)시 \(minute)분"
+        return "\(year)년 \(month)월 \(day)일"
     }
 }
 

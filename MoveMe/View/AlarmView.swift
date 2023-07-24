@@ -36,9 +36,11 @@ struct AlarmView: View {
 private extension AlarmView {
     var header: some View {
         HStack {
-            TimelineView(.periodic(from: .now, by: 1)) { _ in
-                Text(viewModel.nextAlarm, style: .timer)
-                    .style(.body2_Bold, Date() >= viewModel.nextAlarm ? .mainRed : .mainNavy)
+            if (alarmStatus != Constant.changed) {
+                TimelineView(.periodic(from: .now, by: 1)) { _ in
+                    Text(viewModel.nextAlarm, style: .timer)
+                        .style(.body2_Bold, Date() >= viewModel.nextAlarm ? .mainRed : .mainNavy)
+                }
             }
             Spacer()
             Button {

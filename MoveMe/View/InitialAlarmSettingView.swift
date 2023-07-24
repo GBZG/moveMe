@@ -22,7 +22,6 @@ struct InitialAlarmSettingView: View {
         VStack() {
             map
             alarmSetting
-            Spacer()
         }
         .onAppear { region = viewModel.onAppear(manager) }
     }
@@ -35,14 +34,19 @@ private extension InitialAlarmSettingView {
             showsUserLocation: true,
             userTrackingMode: .constant(.follow)
         )
-        .frame(height: 250)
+        .frame(height: 350)
     }
     
     var alarmSetting: some View {
         VStack {
-            Text("원하는 장소에서 알람을 설정해주세요.")
+            Text("현재 위치에서 알람을 설정해보세요")
                 .style(.heading3_Bold)
-                .padding()
+                .padding(.top, 10)
+                .padding(.bottom, 3)
+            Text("알람은 지정된 위치에서 해제 가능합니다.")
+                .style(.caption)
+                .padding(.bottom)
+            
             DatePicker(
                 "",
                 selection: $currentDate,
@@ -50,7 +54,11 @@ private extension InitialAlarmSettingView {
             )
                 .labelsHidden()
                 .datePickerStyle(.wheel)
+            
+            Spacer()
+            
             CustomButton(text: "설정하기") { isAlertActive.toggle() }
+            .padding(.bottom)
             .alert("알람 설정", isPresented: $isAlertActive) {
                 Button("돌아가기") { }
                 Button("완료하기") {
