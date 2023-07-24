@@ -30,7 +30,7 @@ extension Date {
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: self)
         let minute = calendar.component(.minute, from: self)
-        return "\(hour):\(minute)"
+        return "\(String(format: "%02d", hour)):\(String(format: "%02d", minute))"
     }
     
     var koreanDateForm: String {
