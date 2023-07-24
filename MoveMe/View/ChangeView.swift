@@ -10,11 +10,15 @@ import SwiftUI
 struct ChangeView: View {
     @ObservedObject private var viewModel = ChangeViewModel()
     @State private var currentDate = Date()
+    @State private var settingDate = Date()
     
     var body: some View {
         alarmSetting
             .navigationBarHidden(true)
             .onAppear { viewModel.onAppear() }
+            .onChange(of: currentDate) { _ in
+                settingDate = Date()
+            }
     }
 }
 
@@ -33,7 +37,7 @@ private extension ChangeView {
             DatePicker(
                 "",
                 selection: $currentDate,
-                in: Date()...Date().endOfDay,
+                in: settingDate...Date().endOfDay,
                 displayedComponents: [.hourAndMinute]
             )
             .labelsHidden()
