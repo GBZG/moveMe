@@ -9,7 +9,7 @@ import SwiftUI
 import CoreLocation
 
 struct ContentView: View {
-    @StateObject var viewModel = ContentViewModel()
+    @StateObject private var viewModel = ContentViewModel()
     @AppStorage("isAlarmSet") private var isAlarmSet = false
     
     var body: some View {

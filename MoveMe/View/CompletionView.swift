@@ -9,43 +9,15 @@ import SwiftUI
 
 struct CompletionView: View {
     @ObservedObject private var viewModel = CompletionViewModel()
-    @State private var isSettingButtonTapped = false
     
     var body: some View {
-        NavigationView { bodyView }
+        completion
+            .navigationBarHidden(true)
             .onAppear { viewModel.onAppear() }
-            .onDisappear { viewModel.onDisappear() }
     }
 }
 
 private extension CompletionView {
-    var bodyView: some View {
-        VStack {
-            header
-            Spacer()
-            completion
-            Spacer()
-            googleAd
-            NavigationLink("", isActive: $isSettingButtonTapped) {
-                SettingView()
-            }
-            .navigationBarHidden(true)
-        }
-    }
-    
-    var header: some View {
-        HStack {
-            Spacer()
-            Button {
-                isSettingButtonTapped.toggle()
-            } label: {
-                Image(systemName: "gearshape.fill")
-                    .foregroundColor(.mainNavy)
-            }
-        }
-        .padding()
-    }
-    
     var completion: some View {
         VStack {
             Text("🎉")
@@ -60,9 +32,5 @@ private extension CompletionView {
                 .style(.caption)
         }
         .padding(.bottom)
-    }
-    
-    var googleAd: some View {
-        AdView()
     }
 }

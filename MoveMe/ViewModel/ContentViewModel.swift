@@ -11,12 +11,23 @@ final class ContentViewModel: ObservableObject {
     @Published var locationManager = LocationManager()
     
     func onAppear() {
-        locationManager.requestPermission()
-        NotificationManager.instance.requestAuth()
-        SoundManager.instance.playSilentMusic()
+        startBasicSetting()
     }
     
     func onDisappear() {
+        sendTerminationWarning()
+    }
+}
+
+private extension ContentViewModel {
+    func startBasicSetting() {
+        locationManager.requestPermission()
+        NotificationManager.instance.requestAuth()
+        SoundManager.instance.playSilentMusic()
+
+    }
+    
+    func sendTerminationWarning() {
         NotificationManager.instance.sendTerminatedWarning()
     }
 }

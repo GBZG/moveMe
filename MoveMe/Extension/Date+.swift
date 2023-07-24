@@ -30,7 +30,16 @@ extension Date {
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: self)
         let minute = calendar.component(.minute, from: self)
-        return "\(hour)시 \(minute)분"
+        return "\(hour):\(minute)"
+    }
+    
+    var nextAlarmDisplay: String {
+        let calendar = Calendar.current
+        let month = calendar.component(.month, from: self)
+        let day = calendar.component(.day, from: self)
+        let hour = calendar.component(.hour, from: self)
+        let minute = calendar.component(.minute, from: self)
+        return "\(month)월\(day)일 \(hour)시 \(minute)분"
     }
 }
 

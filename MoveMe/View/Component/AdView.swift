@@ -25,11 +25,15 @@ struct GoogleAdView: UIViewControllerRepresentable {
         let viewController = UIViewController()
         let bannerSize = GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(Constant.screenWidth)
         let banner = GADBannerView(adSize: bannerSize)
+        
         banner.rootViewController = viewController
+        
         viewController.view.addSubview(banner)
         viewController.view.frame = CGRect(origin: .zero, size: bannerSize.size)
+        
         banner.adUnitID = Constant.testAdBanner
         banner.load(GADRequest())
+        
         return viewController
     }
     

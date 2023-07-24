@@ -26,9 +26,8 @@ struct RingingView: View {
         VStack {
             map
             alarmIsOn
-            Spacer()
-            googleAd
         }
+        .navigationBarHidden(true)
         .onAppear { region = viewModel.onAppear(manager) }
     }
 }
@@ -65,10 +64,6 @@ private extension RingingView {
                 Text("남은 거리 \(viewModel.distance ?? 0)m")
             }
         }
-    }
-    
-    var googleAd: some View {
-        AdView()
     }
 }
 

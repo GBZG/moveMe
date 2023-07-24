@@ -10,44 +10,14 @@ import SwiftUI
 struct ChangeView: View {
     @ObservedObject private var viewModel = ChangeViewModel()
     @State private var currentDate = Date()
-    @State private var isSettingButtonTapped = false
     
     var body: some View {
-        NavigationView { bodyView }
+        alarmSetting
+            .navigationBarHidden(true)
     }
 }
 
 private extension ChangeView {
-    var bodyView: some View {
-        VStack {
-            header
-            Spacer()
-            alarmSetting
-            Spacer()
-            googleAd
-            NavigationLink("", isActive: $isSettingButtonTapped) {
-                SettingView()
-            }
-            .navigationBarHidden(true)
-        }
-    }
-    var header: some View {
-        HStack {
-            Spacer()
-            Button {
-                isSettingButtonTapped.toggle()
-            } label: {
-                Image(systemName: "gearshape.fill")
-                    .foregroundColor(.mainNavy)
-            }
-        }
-        .padding()
-    }
-    
-    var googleAd: some View {
-        AdView()
-    }
-    
     var alarmSetting: some View {
         VStack {
             Text("\(viewModel.scheduledHour) : \(viewModel.scheduledMinute)")

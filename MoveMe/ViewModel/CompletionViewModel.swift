@@ -12,10 +12,6 @@ final class CompletionViewModel: ObservableObject {
         AlarmManager.instance.completeAlarm()
         readyForNextAlarm()
     }
-    
-    func onDisappear() {
-        NotificationManager.instance.sendTerminatedWarning()
-    }
 }
 
 private extension CompletionViewModel {
