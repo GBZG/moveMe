@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7A16AA702A518C6000DCD973 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA6F2A518C6000DCD973 /* SoundManager.swift */; };
 		7A16AA732A518EC000DCD973 /* silentSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A16AA712A518EC000DCD973 /* silentSound.wav */; };
-		7A16AA772A5194C800DCD973 /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA762A5194C800DCD973 /* SampleModel.swift */; };
 		7A16AA7A2A5196BD00DCD973 /* InitialAlarmSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA792A5196BD00DCD973 /* InitialAlarmSettingViewModel.swift */; };
 		7A16AA7C2A519DC600DCD973 /* AlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA7B2A519DC600DCD973 /* AlarmViewModel.swift */; };
 		7A16AA7E2A51A09E00DCD973 /* WaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA7D2A51A09E00DCD973 /* WaitingView.swift */; };
@@ -47,12 +46,12 @@
 		7A7653A82A5042E900670C76 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7653A72A5042E900670C76 /* AlarmView.swift */; };
 		7AA92D2E2A71486F00EA6F9A /* StartingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA92D2D2A71486F00EA6F9A /* StartingViewModel.swift */; };
 		7AA92D302A71688000EA6F9A /* HalfSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA92D2F2A71688000EA6F9A /* HalfSheet.swift */; };
+		7AA92D322A718E9900EA6F9A /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA92D312A718E9900EA6F9A /* MapLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7A16AA6F2A518C6000DCD973 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		7A16AA712A518EC000DCD973 /* silentSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = silentSound.wav; sourceTree = "<group>"; };
-		7A16AA762A5194C800DCD973 /* SampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
 		7A16AA792A5196BD00DCD973 /* InitialAlarmSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialAlarmSettingViewModel.swift; sourceTree = "<group>"; };
 		7A16AA7B2A519DC600DCD973 /* AlarmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewModel.swift; sourceTree = "<group>"; };
 		7A16AA7D2A51A09E00DCD973 /* WaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingView.swift; sourceTree = "<group>"; };
@@ -91,6 +90,7 @@
 		7A7653A72A5042E900670C76 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
 		7AA92D2D2A71486F00EA6F9A /* StartingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingViewModel.swift; sourceTree = "<group>"; };
 		7AA92D2F2A71688000EA6F9A /* HalfSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfSheet.swift; sourceTree = "<group>"; };
+		7AA92D312A718E9900EA6F9A /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +108,7 @@
 		7A16AA752A5194BA00DCD973 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7A16AA762A5194C800DCD973 /* SampleModel.swift */,
+				7AA92D312A718E9900EA6F9A /* MapLocation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -334,7 +334,6 @@
 				7A16AA702A518C6000DCD973 /* SoundManager.swift in Sources */,
 				7A16AA7A2A5196BD00DCD973 /* InitialAlarmSettingViewModel.swift in Sources */,
 				7A545D792A6CD26A0092309E /* CompletionView.swift in Sources */,
-				7A16AA772A5194C800DCD973 /* SampleModel.swift in Sources */,
 				7A28E66F2A6D500200699DB4 /* View+.swift in Sources */,
 				7A545D752A6BC78E0092309E /* Constant.swift in Sources */,
 				7A76539F2A502EC400670C76 /* RingingViewModel.swift in Sources */,
@@ -349,6 +348,7 @@
 				7A28E6572A6CFC9B00699DB4 /* Font+.swift in Sources */,
 				7A16AA892A51AEF200DCD973 /* CustomButton.swift in Sources */,
 				7A28E6602A6D0FAE00699DB4 /* GreetingView.swift in Sources */,
+				7AA92D322A718E9900EA6F9A /* MapLocation.swift in Sources */,
 				7A545D722A6BB7F60092309E /* ContentViewModel.swift in Sources */,
 				7A7653A82A5042E900670C76 /* AlarmView.swift in Sources */,
 				7A76538D2A501E0E00670C76 /* LocationManager.swift in Sources */,

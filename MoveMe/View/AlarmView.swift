@@ -25,21 +25,13 @@ struct AlarmView: View {
                 }
             }
         }
-        .onAppear { viewModel.onAppear(alarmStatus) }
         .onDisappear { viewModel.onDisappear() }
-        .onChange(of: alarmStatus) { newValue in
-            viewModel.onAppear(newValue)
-        }
     }
 }
 
 private extension AlarmView {
     var header: some View {
         HStack {
-//            TimelineView(.periodic(from: .now, by: 1)) { _ in
-//                Text(viewModel.nextAlarm, style: .timer)
-//                    .style(.body2_Bold, Date() >= viewModel.nextAlarm ? .mainRed : .mainNavy)
-//            }
             Spacer()
             Button {
                 isSettingButtonTapped.toggle()
@@ -60,7 +52,6 @@ private extension AlarmView {
         switch alarmStatus {
         case Constant.active: RingingView()
         case Constant.waiting: WaitingView()
-        case Constant.completed: CompletionView()
         default:
             WaitingView()
         }

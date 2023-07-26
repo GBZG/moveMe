@@ -33,15 +33,12 @@ final class RingingViewModel: ObservableObject {
         if (distance <= 12) {
             isAlertActive = false
             completeAlarm()
+        } else {
+            isAlertActive = true
         }
-        
-        isAlertActive = true
     }
     
-    func tapAlertCloseButton() {
-        isAlertActive = false
-    }
-    
+    func tapAlertCloseButton() { isAlertActive = false }
 }
 
 private extension RingingViewModel {
@@ -66,6 +63,6 @@ private extension RingingViewModel {
     func completeAlarm() {
         SoundManager.instance.stopBackgroundMusic()
         SoundManager.instance.playSilentMusic()
-        AlarmManager.instance.completeAlarm()
+        isAlarmCompleted = true
     }
 }

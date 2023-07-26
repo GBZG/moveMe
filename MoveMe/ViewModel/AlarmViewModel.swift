@@ -8,12 +8,6 @@
 import Foundation
 
 final class AlarmViewModel: ObservableObject {
-    @Published var nextAlarm = Date()
-    
-    func onAppear(_ alarmStatus: String) {
-        calculateNextAlarm(alarmStatus)
-    }
-    
     func onDisappear() {
         sendTerminationWarning()
     }
@@ -22,12 +16,5 @@ final class AlarmViewModel: ObservableObject {
 private extension AlarmViewModel {
     func sendTerminationWarning() {
         NotificationManager.instance.sendTerminatedWarning()
-    }
-    
-    func calculateNextAlarm(_ alarmStatus: String) {
-        guard let alarm = UserDefaults.standard.object(forKey: Constant.nextAlarm) as? Date
-        else { return }
-        
-        nextAlarm = alarm
     }
 }

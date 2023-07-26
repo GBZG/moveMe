@@ -22,7 +22,6 @@ extension Constant {
     
     static let active = "active"
     static let waiting = "waiting"
-    static let completed = "completed"
 }
 
 // MARK: Location Data

@@ -21,6 +21,14 @@ struct RingingView: View {
             longitude: manager.coordinate?.longitude ?? 0
         )
     }
+    private var distance: Int {
+        let savedLatitude = UserDefaults.standard.double(forKey: Constant.latitude)
+        let savedLongitude = UserDefaults.standard.double(forKey: Constant.longitude)
+        let coordinate = CLLocation(latitude: savedLatitude, longitude: savedLongitude)
+        let distanceInMeters = currentLocation.distance(from: coordinate)
+
+        return Int(distanceInMeters)
+    }
     
     var body: some View {
         VStack {
@@ -29,6 +37,9 @@ struct RingingView: View {
         }
         .navigationBarHidden(true)
         .onAppear { region = viewModel.onAppear(manager) }
+        .fullScreenCover(isPresented: $viewModel.isAlarmCompleted) {
+            CompletionView(didTapReturnButton: $viewModel.isAlarmCompleted)
+        }
     }
 }
 
@@ -51,7 +62,7 @@ private extension RingingView {
         VStack {
             Text("남은 거리")
                 .padding(.bottom, 3)
-            Text(" \(viewModel.distance ?? 0)m")
+            Text("\(distance)m")
                 .style(.heading2_Bold)
                 .padding(.bottom)
             

@@ -8,16 +8,15 @@
 import Foundation
 
 final class CompletionViewModel: ObservableObject {
-    func onAppear() {
-        AlarmManager.instance.completeAlarm()
+    func onAppear() { }
+    
+    func onDisappear() {
         readyForNextAlarm()
-    }
+    }    
 }
 
 private extension CompletionViewModel {
     func readyForNextAlarm() {
-        SoundManager.instance.stopBackgroundMusic()
-        SoundManager.instance.playSilentMusic()
         AlarmManager.instance.completeAlarm()
     }
 }
