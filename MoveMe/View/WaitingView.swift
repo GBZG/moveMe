@@ -12,15 +12,17 @@ struct WaitingView: View {
     @AppStorage(Constant.scheduledHour) private var hour = ""
     @AppStorage(Constant.scheduledMinute) private var minute = ""
     @State private var currentDate = Date()
-    @State private var isChangeButtonTapped = false
+    @State private var isChangeButtonTapped = false    
+    private var nextAlarmDate: String {
+        let date = UserDefaults.standard.object(forKey: Constant.nextAlarm) as? Date
+        guard let date = date else { return "" }
+        return date.koreanDateForm
+    }
     
     var body: some View {
         alarmSetting
             .navigationBarHidden(true)
             .onAppear { viewModel.onAppear() }
-            .onChange(of: isChangeButtonTapped) { newValue in
-                viewModel.onChange()
-            }
     }
 }
 
@@ -29,12 +31,13 @@ private extension WaitingView {
         ZStack {
             VStack {
                 Spacer()
-                Text("다음 알람은..")
+                Text("다음 알람 시간이에요")
                     .style(.body3_Regular)
-                    .padding(.bottom, 20)
-                Text("\(viewModel.nextAlarm.koreanDateForm)")
+                    .padding(.bottom, 8)
+                
+                Text(nextAlarmDate)
                     .style(.body3_Regular)
-                Text("\(hour) : \(minute)")
+                Text("\(hour) : \(Double(minute)! <= 9 ? "0\(minute)" : minute)")
                     .font(.custom(Constant.pretendardBold, size: 48))
                     .padding(.bottom, 20)
                 

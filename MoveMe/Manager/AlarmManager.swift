@@ -7,14 +7,6 @@
 
 import Foundation
 
-enum AlarmStatus: String {
-    case active = "active"
-    case waiting = "waiting"
-    case changed = "changed"
-    case completed = "completed"
-    case discarded = "discarded"
-}
-
 final class AlarmManager: ObservableObject {
     static let instance = AlarmManager()
     var timer: Timer?
@@ -26,30 +18,21 @@ final class AlarmManager: ObservableObject {
     }
         
     func completeAlarm() {
-        UserDefaults.standard.set(Constant.completed, forKey: Constant.alarmStatus)
+        UserDefaults.standard.set(Constant.waiting, forKey: Constant.alarmStatus)
         setTomorrowAlarm()
-        resetOnMidNight()
     }
 }
 
 private extension AlarmManager {
     func setTomorrowAlarm() {
-        guard timer == nil else { return }
         stopPreviousAlarm()
-        runTimer(Date().alarmTimeOfTomorrow)
-        NotificationManager.instance.scheduleNotification(currentDate: Date().alarmTimeOfTomorrow)
-    }
-    
-    func resetOnMidNight() {
-        let timer = Timer(
-            fireAt: Date().endOfDay,
-            interval: 0,
-            target: self,
-            selector: #selector(runStatusReset),
-            userInfo: nil,
-            repeats: false
-        )
-        RunLoop.main.add(timer, forMode: .common)
+        
+        guard timer == nil else { return }
+        
+        let tomorrowAlarmTime = Date().tomorrow.alarmTimeSetting
+        
+        runTimer(tomorrowAlarmTime)
+        NotificationManager.instance.scheduleNotification(currentDate: tomorrowAlarmTime)
     }
     
     func runTimer(_ date: Date) {

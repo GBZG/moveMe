@@ -11,7 +11,7 @@ import MapKit
 struct RingingView: View {
     @EnvironmentObject private var manager: LocationManager
     @ObservedObject private var viewModel = RingingViewModel()
-    @State var region: MKCoordinateRegion = MKCoordinateRegion(
+    @State private var region: MKCoordinateRegion = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 0, longitude: 0),
         span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
     )

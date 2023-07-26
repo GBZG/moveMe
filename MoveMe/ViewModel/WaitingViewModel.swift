@@ -8,15 +8,7 @@
 import Foundation
 
 final class WaitingViewModel: ObservableObject {
-    @Published var nextAlarm = Date()
-    
-    func onAppear() {
-        calculateNextAlarm()
-    }
-    
-    func onChange() {
-        calculateNextAlarm()
-    }
+    func onAppear() { }
     
     func didTapAlarmChangeButton(_ currentDate: Date) {
         changeAlarm(currentDate)
@@ -24,14 +16,7 @@ final class WaitingViewModel: ObservableObject {
     }
 }
 
-extension WaitingViewModel {
-    func calculateNextAlarm() {
-        guard let alarm = UserDefaults.standard.object(forKey: Constant.nextAlarm) as? Date
-        else { return }
-        
-        nextAlarm = alarm
-    }
-    
+extension WaitingViewModel {    
     func changeAlarm(_ currentDate: Date) {
         let hour = Calendar.current.component(.hour, from: currentDate)
         let minute = Calendar.current.component(.minute, from: currentDate)

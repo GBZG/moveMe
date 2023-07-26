@@ -11,6 +11,7 @@ import MapKit
 final class RingingViewModel: ObservableObject {
     @Published var distance: Int? = nil
     @Published var isAlertActive = false
+    @Published var isAlarmCompleted = false
     @Published var savedCoordiates: CLLocation? = nil
     @Published var scheduledHour = UserDefaults.standard.integer(forKey: Constant.scheduledHour)
     @Published var scheduledMinute = UserDefaults.standard.integer(forKey: Constant.scheduledMinute)
