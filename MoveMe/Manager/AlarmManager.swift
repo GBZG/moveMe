@@ -21,6 +21,13 @@ final class AlarmManager: ObservableObject {
         UserDefaults.standard.set(Constant.waiting, forKey: Constant.alarmStatus)
         setTomorrowAlarm()
     }
+    
+    func restartRecentAlarm() {
+        guard let recentAlarmDate = UserDefaults.standard.object(forKey: Constant.nextAlarm) as? Date
+        else { return }
+        
+        runTimer(recentAlarmDate.alarmTimeSetting)
+    }
 }
 
 private extension AlarmManager {
