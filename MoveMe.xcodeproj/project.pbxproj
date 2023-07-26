@@ -12,10 +12,8 @@
 		7A16AA772A5194C800DCD973 /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA762A5194C800DCD973 /* SampleModel.swift */; };
 		7A16AA7A2A5196BD00DCD973 /* InitialAlarmSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA792A5196BD00DCD973 /* InitialAlarmSettingViewModel.swift */; };
 		7A16AA7C2A519DC600DCD973 /* AlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA7B2A519DC600DCD973 /* AlarmViewModel.swift */; };
-		7A16AA7E2A51A09E00DCD973 /* ChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA7D2A51A09E00DCD973 /* ChangeView.swift */; };
-		7A16AA802A51A17900DCD973 /* WaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA7F2A51A17900DCD973 /* WaitingView.swift */; };
-		7A16AA822A51A29300DCD973 /* WaitingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA812A51A29300DCD973 /* WaitingViewModel.swift */; };
-		7A16AA842A51A60400DCD973 /* ChangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA832A51A60400DCD973 /* ChangeViewModel.swift */; };
+		7A16AA7E2A51A09E00DCD973 /* WaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA7D2A51A09E00DCD973 /* WaitingView.swift */; };
+		7A16AA842A51A60400DCD973 /* WaitingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA832A51A60400DCD973 /* WaitingViewModel.swift */; };
 		7A16AA872A51ACDB00DCD973 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA862A51ACDB00DCD973 /* Date+.swift */; };
 		7A16AA892A51AEF200DCD973 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16AA882A51AEF200DCD973 /* CustomButton.swift */; };
 		7A28E6572A6CFC9B00699DB4 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28E6562A6CFC9B00699DB4 /* Font+.swift */; };
@@ -48,6 +46,7 @@
 		7A7653A62A503D7B00670C76 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7653A52A503D7B00670C76 /* NotificationManager.swift */; };
 		7A7653A82A5042E900670C76 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7653A72A5042E900670C76 /* AlarmView.swift */; };
 		7AA92D2E2A71486F00EA6F9A /* StartingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA92D2D2A71486F00EA6F9A /* StartingViewModel.swift */; };
+		7AA92D302A71688000EA6F9A /* HalfSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA92D2F2A71688000EA6F9A /* HalfSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,10 +55,8 @@
 		7A16AA762A5194C800DCD973 /* SampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
 		7A16AA792A5196BD00DCD973 /* InitialAlarmSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialAlarmSettingViewModel.swift; sourceTree = "<group>"; };
 		7A16AA7B2A519DC600DCD973 /* AlarmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewModel.swift; sourceTree = "<group>"; };
-		7A16AA7D2A51A09E00DCD973 /* ChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeView.swift; sourceTree = "<group>"; };
-		7A16AA7F2A51A17900DCD973 /* WaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingView.swift; sourceTree = "<group>"; };
-		7A16AA812A51A29300DCD973 /* WaitingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingViewModel.swift; sourceTree = "<group>"; };
-		7A16AA832A51A60400DCD973 /* ChangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeViewModel.swift; sourceTree = "<group>"; };
+		7A16AA7D2A51A09E00DCD973 /* WaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingView.swift; sourceTree = "<group>"; };
+		7A16AA832A51A60400DCD973 /* WaitingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingViewModel.swift; sourceTree = "<group>"; };
 		7A16AA862A51ACDB00DCD973 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		7A16AA882A51AEF200DCD973 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		7A28E6562A6CFC9B00699DB4 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
@@ -93,6 +90,7 @@
 		7A7653A52A503D7B00670C76 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		7A7653A72A5042E900670C76 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
 		7AA92D2D2A71486F00EA6F9A /* StartingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingViewModel.swift; sourceTree = "<group>"; };
+		7AA92D2F2A71688000EA6F9A /* HalfSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +118,7 @@
 			children = (
 				7A16AA882A51AEF200DCD973 /* CustomButton.swift */,
 				7A28E6772A6D6E4C00699DB4 /* AdView.swift */,
+				7AA92D2F2A71688000EA6F9A /* HalfSheet.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -204,9 +203,8 @@
 				7A545D712A6BB7F60092309E /* ContentViewModel.swift */,
 				7A16AA7B2A519DC600DCD973 /* AlarmViewModel.swift */,
 				7A16AA792A5196BD00DCD973 /* InitialAlarmSettingViewModel.swift */,
-				7A16AA832A51A60400DCD973 /* ChangeViewModel.swift */,
+				7A16AA832A51A60400DCD973 /* WaitingViewModel.swift */,
 				7A76539E2A502EC400670C76 /* RingingViewModel.swift */,
-				7A16AA812A51A29300DCD973 /* WaitingViewModel.swift */,
 				7A545D7A2A6CD3DF0092309E /* CompletionViewModel.swift */,
 				7AA92D2D2A71486F00EA6F9A /* StartingViewModel.swift */,
 			);
@@ -221,9 +219,8 @@
 				7A7653A72A5042E900670C76 /* AlarmView.swift */,
 				7A7653922A50265000670C76 /* StartingView.swift */,
 				7A28E65D2A6D0F4700699DB4 /* InitialAlarmSettingView.swift */,
-				7A16AA7D2A51A09E00DCD973 /* ChangeView.swift */,
+				7A16AA7D2A51A09E00DCD973 /* WaitingView.swift */,
 				7A76539C2A502E9300670C76 /* RingingView.swift */,
-				7A16AA7F2A51A17900DCD973 /* WaitingView.swift */,
 				7A545D782A6CD26A0092309E /* CompletionView.swift */,
 				7A28E65F2A6D0FAE00699DB4 /* GreetingView.swift */,
 				7A28E66A2A6D464C00699DB4 /* SettingView.swift */,
@@ -329,10 +326,9 @@
 				7A28E65A2A6D030400699DB4 /* Text+.swift in Sources */,
 				7A16AA7C2A519DC600DCD973 /* AlarmViewModel.swift in Sources */,
 				7A28E66B2A6D464C00699DB4 /* SettingView.swift in Sources */,
-				7A16AA802A51A17900DCD973 /* WaitingView.swift in Sources */,
 				7A545D772A6BD5B00092309E /* AlarmManager.swift in Sources */,
 				7A28E6782A6D6E4C00699DB4 /* AdView.swift in Sources */,
-				7A16AA7E2A51A09E00DCD973 /* ChangeView.swift in Sources */,
+				7A16AA7E2A51A09E00DCD973 /* WaitingView.swift in Sources */,
 				7A7653802A501C8900670C76 /* ContentView.swift in Sources */,
 				7A28E65C2A6D0AD300699DB4 /* Color+.swift in Sources */,
 				7A16AA702A518C6000DCD973 /* SoundManager.swift in Sources */,
@@ -344,10 +340,11 @@
 				7A76539F2A502EC400670C76 /* RingingViewModel.swift in Sources */,
 				7A7653A62A503D7B00670C76 /* NotificationManager.swift in Sources */,
 				7A28E65E2A6D0F4700699DB4 /* InitialAlarmSettingView.swift in Sources */,
+				7AA92D302A71688000EA6F9A /* HalfSheet.swift in Sources */,
 				7A7653932A50265000670C76 /* StartingView.swift in Sources */,
 				7A76537E2A501C8900670C76 /* MoveMeApp.swift in Sources */,
 				7A7653A42A5035CD00670C76 /* HapticManager.swift in Sources */,
-				7A16AA842A51A60400DCD973 /* ChangeViewModel.swift in Sources */,
+				7A16AA842A51A60400DCD973 /* WaitingViewModel.swift in Sources */,
 				7A76539D2A502E9300670C76 /* RingingView.swift in Sources */,
 				7A28E6572A6CFC9B00699DB4 /* Font+.swift in Sources */,
 				7A16AA892A51AEF200DCD973 /* CustomButton.swift in Sources */,
@@ -355,7 +352,6 @@
 				7A545D722A6BB7F60092309E /* ContentViewModel.swift in Sources */,
 				7A7653A82A5042E900670C76 /* AlarmView.swift in Sources */,
 				7A76538D2A501E0E00670C76 /* LocationManager.swift in Sources */,
-				7A16AA822A51A29300DCD973 /* WaitingViewModel.swift in Sources */,
 				7AA92D2E2A71486F00EA6F9A /* StartingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

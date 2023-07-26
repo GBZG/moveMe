@@ -41,11 +41,7 @@ private extension InitialAlarmSettingViewModel {
         // Seve Alarm Data
         UserDefaults.standard.set(hour, forKey: Constant.scheduledHour)
         UserDefaults.standard.set(minute, forKey: Constant.scheduledMinute)
-        
-        // Save the First Original Alarm Setting
-        UserDefaults.standard.set(hour, forKey: Constant.originalHour)
-        UserDefaults.standard.set(minute, forKey: Constant.originalMinute)
-        
+                
         if (Date() >= currentDate) {
             // When the user select past time. Then set tomorrow alarm
             AlarmManager.instance.setTimer(currentDate.tomorrow)

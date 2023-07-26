@@ -20,13 +20,9 @@ final class AlarmManager: ObservableObject {
     var timer: Timer?
     
     func setTimer(_ currentDate: Date) {
-        runTimer(currentDate.originalAlarmTimeSetting)
-    }
-    
-    func changeTimer(_ currentDate: Date) {
-        guard timer == nil else { return }
         stopPreviousAlarm()
-        runTimer(currentDate.changedAlarmTimeSetting)
+        guard timer == nil else { return }
+        runTimer(currentDate.alarmTimeSetting)
     }
         
     func completeAlarm() {
@@ -40,8 +36,8 @@ private extension AlarmManager {
     func setTomorrowAlarm() {
         guard timer == nil else { return }
         stopPreviousAlarm()
-        runTimer(Date().originalAlarmForTomorrow)
-        NotificationManager.instance.scheduleNotification(currentDate: Date().originalAlarmForTomorrow)
+        runTimer(Date().alarmTimeOfTomorrow)
+        NotificationManager.instance.scheduleNotification(currentDate: Date().alarmTimeOfTomorrow)
     }
     
     func resetOnMidNight() {

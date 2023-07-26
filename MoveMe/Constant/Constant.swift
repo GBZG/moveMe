@@ -18,13 +18,10 @@ extension Constant {
     static let isAlarmSet = "isAlarmSet"
     static let scheduledHour = "scheduledHour"
     static let scheduledMinute = "scheduledMinute"
-    static let originalHour = "originalHour"
-    static let originalMinute = "originalMinute"
     static let nextAlarm = "nextAlarm"
     
     static let active = "active"
     static let waiting = "waiting"
-    static let changed = "changed"
     static let completed = "completed"
 }
 

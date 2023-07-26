@@ -59,11 +59,10 @@ private extension AlarmView {
     var bodyView: some View {
         switch alarmStatus {
         case Constant.active: RingingView()
-        case Constant.waiting: ChangeView()
+        case Constant.waiting: WaitingView()
         case Constant.completed: CompletionView()
-        case Constant.changed: WaitingView()
         default:
-            ChangeView()
+            WaitingView()
         }
     }
 }

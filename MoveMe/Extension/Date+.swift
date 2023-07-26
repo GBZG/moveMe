@@ -44,16 +44,7 @@ extension Date {
 
 // MARK: Alarm Setting
 extension Date {
-    var originalAlarmTimeSetting: Date {
-        var components = DateComponents()
-        components.hour = UserDefaults.standard.integer(forKey: Constant.originalHour)
-        components.minute = UserDefaults.standard.integer(forKey: Constant.originalMinute)
-        components.second = 0
-        
-        return Calendar.current.date(byAdding: components, to: startOfDay)!
-    }
-    
-    var changedAlarmTimeSetting: Date {
+    var alarmTimeSetting: Date {
         var components = DateComponents()
         components.hour = UserDefaults.standard.integer(forKey: Constant.scheduledHour)
         components.minute = UserDefaults.standard.integer(forKey: Constant.scheduledMinute)
@@ -61,11 +52,11 @@ extension Date {
         
         return Calendar.current.date(byAdding: components, to: startOfDay)!
     }
-    
-    var originalAlarmForTomorrow: Date {
+        
+    var alarmTimeOfTomorrow: Date {
         var components = DateComponents()
-        components.hour = UserDefaults.standard.integer(forKey: Constant.originalHour)
-        components.minute = UserDefaults.standard.integer(forKey: Constant.originalMinute)
+        components.hour = UserDefaults.standard.integer(forKey: Constant.scheduledHour)
+        components.minute = UserDefaults.standard.integer(forKey: Constant.scheduledMinute)
         components.second = 0
         
         return Calendar.current.date(byAdding: components, to: tomorrow)!

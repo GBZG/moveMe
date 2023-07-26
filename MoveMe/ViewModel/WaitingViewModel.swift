@@ -8,31 +8,47 @@
 import Foundation
 
 final class WaitingViewModel: ObservableObject {
-    @Published var originalHour = String(
-        format: "%02d",
-        UserDefaults.standard.integer(forKey: Constant.originalHour)
-    )
-    @Published var originalMinute = String(
-        format: "%02d",
-        UserDefaults.standard.integer(forKey: Constant.originalMinute)
-    )
-    @Published var scheduledHour = String(
-        format: "%02d",
-        UserDefaults.standard.integer(forKey: Constant.scheduledHour)
-    )
-    @Published var scheduledMinute = String(
-        format: "%02d",
-        UserDefaults.standard.integer(forKey: Constant.scheduledMinute)
-    )
     @Published var nextAlarm = Date()
     
     func onAppear() {
-        calculateTimeLeft()
+        calculateNextAlarm()
+    }
+    
+    func onChange() {
+        calculateNextAlarm()
+    }
+    
+    func didTapAlarmChangeButton(_ currentDate: Date) {
+        changeAlarm(currentDate)
+        changeNotificationSchedule(currentDate)
     }
 }
 
-private extension WaitingViewModel {
-    func calculateTimeLeft() {
-        nextAlarm = Date().changedAlarmTimeSetting
+extension WaitingViewModel {
+    func calculateNextAlarm() {
+        guard let alarm = UserDefaults.standard.object(forKey: Constant.nextAlarm) as? Date
+        else { return }
+        
+        nextAlarm = alarm
+    }
+    
+    func changeAlarm(_ currentDate: Date) {
+        let hour = Calendar.current.component(.hour, from: currentDate)
+        let minute = Calendar.current.component(.minute, from: currentDate)
+        
+        // Seve New Alarm Data
+        UserDefaults.standard.set(hour, forKey: Constant.scheduledHour)
+        UserDefaults.standard.set(minute, forKey: Constant.scheduledMinute)
+                
+        if (Date() >= currentDate) {
+            // When the user select past time. Then set tomorrow alarm
+            AlarmManager.instance.setTimer(currentDate.tomorrow)
+        } else {
+            AlarmManager.instance.setTimer(currentDate)
+        }
+    }
+    
+    func changeNotificationSchedule(_ currentDate: Date) {
+        NotificationManager.instance.scheduleNotification(currentDate: currentDate)
     }
 }
