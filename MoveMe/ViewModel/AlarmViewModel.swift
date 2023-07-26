@@ -24,5 +24,6 @@ private extension AlarmViewModel {
     
     func sendTerminationWarning() {
         NotificationManager.instance.sendTerminatedWarning()
+        NotificationManager.instance.stopRepitition()
     }
 }

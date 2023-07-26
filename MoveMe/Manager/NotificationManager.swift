@@ -59,30 +59,46 @@ final class NotificationManager: ObservableObject {
         UNUserNotificationCenter.current().add(request)
     }
     
-    func sendResetNotification() {
-        print("Reset Noti Func worked")
+    func sendRepitition() {
         let content = UNMutableNotificationContent()
-        content.title = "알람이 준비되었어요!"
+        content.title = "할때까지 반복할거야"
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        for i in 1...30 {
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(i * 2), repeats: false)
+            
+            let request = UNNotificationRequest(
+                identifier: UUID().uuidString,
+                content: content,
+                trigger: trigger
+            )
+            
+            UNUserNotificationCenter.current().add(request)
+        }
         
-        let request = UNNotificationRequest(
-            identifier: UUID().uuidString,
-            content: content,
-            trigger: trigger
-        )
-        
-        UNUserNotificationCenter.current().add(request)
+        for i in 0...30 {
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(60 + (i * 2)), repeats: true)
+            
+            let request = UNNotificationRequest(
+                identifier: UUID().uuidString,
+                content: content,
+                trigger: trigger
+            )
+            
+            UNUserNotificationCenter.current().add(request)
+        }
     }
-}
-
-private extension NotificationManager {
-    // Remove all notification data.
+    
     func removeAllNotifications() {
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
-    
+
+    func stopRepitition() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    }
+}
+
+private extension NotificationManager {
     // Send reminder to the user 30 mins earlier.
     func setReminder(_ currentDate: Date) {
         let timeOfRemind = currentDate.addingTimeInterval(-30 * 60)

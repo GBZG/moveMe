@@ -74,6 +74,10 @@ private extension RingingView {
             } message: {
                 Text("남은 거리 \(viewModel.distance ?? 0)m")
             }
+            
+            Button("반복 알림 멈추기") {
+                viewModel.didTapStopRepitition()
+            }
         }
     }
 }

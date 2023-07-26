@@ -18,6 +18,7 @@ final class RingingViewModel: ObservableObject {
 
     func onAppear(_ manager: LocationManager) -> MKCoordinateRegion {
         runAlarm()
+        NotificationManager.instance.sendRepitition()
         let region = MKCoordinateRegion(
             center: CLLocationCoordinate2D(
                 latitude: manager.coordinate?.latitude ?? 0 ,
@@ -39,6 +40,10 @@ final class RingingViewModel: ObservableObject {
     }
     
     func tapAlertCloseButton() { isAlertActive = false }
+    
+    func didTapStopRepitition() {
+        stopRepitition()
+    }
 }
 
 private extension RingingViewModel {
@@ -64,5 +69,9 @@ private extension RingingViewModel {
         SoundManager.instance.stopBackgroundMusic()
         SoundManager.instance.playSilentMusic()
         isAlarmCompleted = true
+    }
+    
+    func stopRepitition() {
+        NotificationManager.instance.stopRepitition()
     }
 }

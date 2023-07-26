@@ -35,6 +35,7 @@ extension Constant {
     static let notification = "notification"
     static let reminder = "reminder"
     static let terminationWarning = "terminationWarning"
+    static let repitition = "repitition"
 }
 
 // MARK: Sound Data

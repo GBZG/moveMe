@@ -11,9 +11,10 @@ import AVFoundation
 class SoundManager {
     static let instance = SoundManager()
     var audioPlayer: AVAudioPlayer?
+    var sound: NSURL?
     
     func playSilentMusic() {
-        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "silentSound", ofType: "wav")!)
+        sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "silentSound", ofType: "wav")!)
         
         do {
             try AVAudioSession.sharedInstance().setCategory(
@@ -21,8 +22,10 @@ class SoundManager {
                 mode: AVAudioSession.Mode.default,
                 options: [ AVAudioSession.CategoryOptions.duckOthers ]
             )
-
+            
             try AVAudioSession.sharedInstance().setActive(true)
+            
+            guard let sound = sound else { return }
             
             audioPlayer = try AVAudioPlayer(contentsOf: sound as URL)
             audioPlayer!.numberOfLoops = -1
@@ -34,7 +37,7 @@ class SoundManager {
     }
     
     func playAlarmMusic() {
-        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "eveningOnTheBeach", ofType: "mp3")!)
+        sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "eveningOnTheBeach", ofType: "mp3")!)
         
         do {
             try AVAudioSession.sharedInstance().setCategory(
@@ -42,8 +45,10 @@ class SoundManager {
                 mode: AVAudioSession.Mode.default,
                 options: [ AVAudioSession.CategoryOptions.duckOthers ]
             )
-
+            
             try AVAudioSession.sharedInstance().setActive(true)
+            
+            guard let sound = sound else { return }
             
             audioPlayer = try AVAudioPlayer(contentsOf: sound as URL)
             audioPlayer!.numberOfLoops = -1
@@ -59,8 +64,4 @@ class SoundManager {
         audioPlayer.stop()
     }
     
-    func checkCurrentMusic() -> String {
-        guard let audioPlayer = audioPlayer else { return "" }
-        return "\(audioPlayer.duration)"
-    }
 }

@@ -12,8 +12,6 @@ final class AlarmManager: ObservableObject {
     var timer: Timer?
     
     func setTimer(_ currentDate: Date) {
-        stopPreviousAlarm()
-        guard timer == nil else { return }
         runTimer(currentDate.alarmTimeSetting)
     }
         
@@ -32,10 +30,6 @@ final class AlarmManager: ObservableObject {
 
 private extension AlarmManager {
     func setTomorrowAlarm() {
-        stopPreviousAlarm()
-        
-        guard timer == nil else { return }
-        
         let tomorrowAlarmTime = Date().tomorrow.alarmTimeSetting
         
         runTimer(tomorrowAlarmTime)
@@ -43,8 +37,10 @@ private extension AlarmManager {
     }
     
     func runTimer(_ date: Date) {
+        stopPreviousAlarm()
         guard timer == nil else { return }
         
+        setNotification(date)
         timer = Timer(
             fireAt: date,
             interval: 0,
@@ -60,16 +56,13 @@ private extension AlarmManager {
 
     @objc func runAlarm() {
         UserDefaults.standard.set(Constant.active, forKey: Constant.alarmStatus)
-        SoundManager.instance.stopBackgroundMusic()
-        SoundManager.instance.playAlarmMusic()
-        HapticManager.instance.vibration()
+        NotificationManager.instance.sendRepitition()
     }
     
-    @objc func runStatusReset() {
-        UserDefaults.standard.set(Constant.waiting, forKey: Constant.alarmStatus)
-        NotificationManager.instance.sendResetNotification()
+    func setNotification(_ date: Date) {
+        NotificationManager.instance.scheduleNotification(currentDate: date)
     }
-    
+        
     func stopPreviousAlarm() {
         timer?.invalidate()
         timer = nil
