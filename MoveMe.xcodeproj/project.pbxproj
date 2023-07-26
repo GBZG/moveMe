@@ -47,6 +47,7 @@
 		7A7653A42A5035CD00670C76 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7653A32A5035CD00670C76 /* HapticManager.swift */; };
 		7A7653A62A503D7B00670C76 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7653A52A503D7B00670C76 /* NotificationManager.swift */; };
 		7A7653A82A5042E900670C76 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7653A72A5042E900670C76 /* AlarmView.swift */; };
+		7AA92D2E2A71486F00EA6F9A /* StartingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA92D2D2A71486F00EA6F9A /* StartingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		7A7653A32A5035CD00670C76 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		7A7653A52A503D7B00670C76 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		7A7653A72A5042E900670C76 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
+		7AA92D2D2A71486F00EA6F9A /* StartingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 				7A76539E2A502EC400670C76 /* RingingViewModel.swift */,
 				7A16AA812A51A29300DCD973 /* WaitingViewModel.swift */,
 				7A545D7A2A6CD3DF0092309E /* CompletionViewModel.swift */,
+				7AA92D2D2A71486F00EA6F9A /* StartingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				7A7653A82A5042E900670C76 /* AlarmView.swift in Sources */,
 				7A76538D2A501E0E00670C76 /* LocationManager.swift in Sources */,
 				7A16AA822A51A29300DCD973 /* WaitingViewModel.swift in Sources */,
+				7AA92D2E2A71486F00EA6F9A /* StartingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

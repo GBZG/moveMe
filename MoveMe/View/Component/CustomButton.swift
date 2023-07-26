@@ -10,10 +10,12 @@ import SwiftUI
 struct CustomButton: View {
     let action: () -> Void
     let text: String
+    let isDisabled: Bool
 
-    init(text: String, action: @escaping () -> Void) {
+    init(text: String, _ isDisabled: Bool = false, action: @escaping () -> Void) {
         self.action = action
         self.text = text
+        self.isDisabled = isDisabled
     }
 
     var body: some View {
@@ -23,8 +25,9 @@ struct CustomButton: View {
                 .foregroundColor(.white)
                 .padding(.vertical, 14)
                 .padding(.horizontal, 100)
-                .background(Color.mainBlue)
+                .background(isDisabled ? Color.mainGray : Color.mainBlue)
                 .cornerRadius(12)
             }
+        .disabled(isDisabled)
     }
 }

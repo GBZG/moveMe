@@ -20,7 +20,6 @@ struct ContentView: View {
             }
         }
         .environmentObject(viewModel.locationManager)
-        .onAppear { viewModel.onAppear() }
         .onDisappear { viewModel.onDisappear() }
     }
 }

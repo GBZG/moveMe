@@ -21,15 +21,19 @@ final class InitialAlarmSettingViewModel: ObservableObject {
     }
     
     func didTapCreateAlarmButton(currentDate: Date, latitude: Double?, longitude: Double?) {
-        setAlarm(currentDate, latitude, longitude)
+        setInitialAlarm(currentDate, latitude, longitude)
         setNotificationSchedule(currentDate)
     }
 }
 
 private extension InitialAlarmSettingViewModel {
-    func setAlarm(_ currentDate: Date, _ latitude: Double?, _ longitude: Double?) {
+    func setInitialAlarm(_ currentDate: Date, _ latitude: Double?, _ longitude: Double?) {
         let hour = Calendar.current.component(.hour, from: currentDate)
         let minute = Calendar.current.component(.minute, from: currentDate)
+        
+        // Save Coordinate Data of the Destination
+        UserDefaults.standard.set(latitude, forKey: Constant.latitude)
+        UserDefaults.standard.set(longitude, forKey: Constant.longitude)
         
         // Change the Current View from Starting to Alarm
         UserDefaults.standard.set(true, forKey: Constant.isAlarmSet)
@@ -41,10 +45,6 @@ private extension InitialAlarmSettingViewModel {
         // Save the First Original Alarm Setting
         UserDefaults.standard.set(hour, forKey: Constant.originalHour)
         UserDefaults.standard.set(minute, forKey: Constant.originalMinute)
-        
-        // Save Coordinate Data of the Destination
-        UserDefaults.standard.set(latitude, forKey: Constant.latitude)
-        UserDefaults.standard.set(longitude, forKey: Constant.longitude)
         
         if (Date() >= currentDate) {
             // When the user select past time. Then set tomorrow alarm

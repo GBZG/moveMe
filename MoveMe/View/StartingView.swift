@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct StartingView: View {
+    @EnvironmentObject private var manager: LocationManager
+    @ObservedObject private var viewModel = StartingViewModel()
     @State private var selection: Int = 1
     
     var body: some View {
@@ -20,6 +22,7 @@ struct StartingView: View {
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
         }
+        .onAppear { viewModel.onAppear() }
     }
 }
 
@@ -41,6 +44,8 @@ private extension StartingView {
     }
     var introView: some View {
         VStack {
+            Spacer()
+
             Text("이제는 나도 갓생 마스터!")
                 .style(.heading3_Bold, .mainBlue)
                 .padding(.bottom, 10)
@@ -49,6 +54,21 @@ private extension StartingView {
                 .padding(.bottom, 40)
                 .multilineTextAlignment(.center)
                 .lineSpacing(3)
+            
+            Text("잠깐!")
+                .style(.body3_Medium)
+                .padding(.bottom, 8)
+            Text("위치 정보, 알림 설정 허용이 필요해요\n아래 버튼을 눌러 설정을 완료하세요")
+                .style(.body3_Regular)
+                .multilineTextAlignment(.center)
+                .lineSpacing(1.5)
+            
+            Spacer()
+            
+            CustomButton(text: "알겠어요!") {
+                viewModel.didTapAccessButton(manager)
+            }
+            .padding(.bottom)
         }
     }
     var initialSettingView: some View {
