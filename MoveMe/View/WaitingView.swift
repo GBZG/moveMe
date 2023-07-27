@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct WaitingView: View {
     @ObservedObject private var viewModel = WaitingViewModel()
     @AppStorage(Constant.scheduledHour) private var hour = ""
     @AppStorage(Constant.scheduledMinute) private var minute = ""
+    @AppStorage(Constant.latitude) private var latitude = ""
+    @AppStorage(Constant.longitude) private var longitude = ""
     @State private var currentDate = Date()
     @State private var isChangeButtonTapped = false
     private var nextAlarmDate: String {
@@ -27,6 +30,26 @@ struct WaitingView: View {
 }
 
 private extension WaitingView {
+    var map: some View {
+        VStack {
+            Map(
+                coordinateRegion: $viewModel.region,
+                showsUserLocation: true,
+                annotationItems: viewModel.mapLocations
+            ) {
+                MapAnnotation(coordinate: $0.coordinate) {
+                    Circle()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(.mainBlue)
+                        .overlay { Text("✓").foregroundColor(.mainWhite) }
+                }
+            }
+            .frame(height: 250)
+        }
+        .padding(.bottom)
+    }
+    
+    
     var alarmSetting: some View {
         VStack(spacing: 0) {
             HStack {
@@ -64,7 +87,8 @@ private extension WaitingView {
         }
         .padding(.horizontal, 12)
         .sheet(isPresented: $isChangeButtonTapped) {
-            HalfSheet {
+            VStack {
+                map
                 Spacer()
                 Text("알람 시간을 변경할 수 있어요")
                     .style()

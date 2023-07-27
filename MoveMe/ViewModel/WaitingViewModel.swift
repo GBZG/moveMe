@@ -6,9 +6,31 @@
 //
 
 import Foundation
+import MapKit
 
 final class WaitingViewModel: ObservableObject {
-    func onAppear() { }
+    @Published var region = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 0, longitude: 0),
+        span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
+    )
+    @Published var mapLocations: [MapLocation] = []
+    
+    func onAppear() {
+        let latitude = UserDefaults.standard.double(forKey: Constant.latitude) as Double
+        let longitude = UserDefaults.standard.double(forKey: Constant.longitude) as Double
+        
+        mapLocations = [
+            MapLocation(
+                name: "목적지",
+                latitude: latitude,
+                longitude: longitude
+            )
+        ]
+        region = MKCoordinateRegion(
+            center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude),
+            span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        )
+    }
     
     func didTapAlarmChangeButton(_ currentDate: Date) {
         changeAlarm(currentDate)

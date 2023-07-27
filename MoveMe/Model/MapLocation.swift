@@ -17,10 +17,3 @@ struct MapLocation: Identifiable {
         CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
 }
-
-let MapLocations = [
-    MapLocation(
-        name: "목적지",
-        latitude: Double(Constant.latitude) ?? 0,
-        longitude: Double(Constant.longitude) ?? 0)
-]
