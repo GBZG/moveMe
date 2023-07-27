@@ -48,25 +48,15 @@ class SoundManager {
 
 private extension SoundManager {
     func playCustomSound(_ named: String) {
-        sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: named, ofType: nil)!)
-        
-        do {
-            try AVAudioSession.sharedInstance().setCategory(
-                AVAudioSession.Category.playback,
-                mode: AVAudioSession.Mode.default,
-                options: [ AVAudioSession.CategoryOptions.duckOthers ]
-            )
-            
-            try AVAudioSession.sharedInstance().setActive(true)
-            
-            guard let sound = sound else { return }
-            
-            audioPlayer = try AVAudioPlayer(contentsOf: sound as URL)
-            audioPlayer!.numberOfLoops = -1
-            audioPlayer!.prepareToPlay()
-            audioPlayer!.play()
-        } catch {
-            print("Cannot play the file")
-        }
+//        guard let path = Bundle.main.path(forResource: named, ofType: nil) else { return }
+//        let url = URL(fileURLWithPath: path)
+//
+//        do {
+//            audioPlayer = try AVAudioPlayer(contentsOf: url)
+//            audioPlayer!.numberOfLoops = -1
+//            audioPlayer!.play()
+//        } catch {
+//            print("Cannot play the file")
+//        }
     }
 }

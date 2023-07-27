@@ -61,8 +61,6 @@ private extension AlarmManager {
 
     @objc func runAlarm() {
         UserDefaults.standard.set(Constant.active, forKey: Constant.alarmStatus)
-//        SoundManager.instance.stopBackgroundMusic()
-//        SoundManager.instance.playAlarmMusic()
         HapticManager.instance.vibration()
         NotificationManager.instance.sendRepitition()
     }

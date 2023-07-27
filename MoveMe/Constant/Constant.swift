@@ -40,7 +40,7 @@ extension Constant {
 
 // MARK: Sound Data
 extension Constant {
-    static let durationOfSilentMusic = "60.0"
+    static let ringtoneSound = "messageRingtone.mp3"
 }
 
 // MARK: Google Ads
