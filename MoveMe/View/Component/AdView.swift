@@ -15,13 +15,13 @@ struct AdView: View {
             Group {
                 Rectangle()
                     .foregroundColor(.white)
-                    .overlay {
-                        Text("광고")
-                            .style(.body3_Regular, .mainWhite)
-                            .padding(8)
-                            .background(Color.mainGray)
-                            .cornerRadius(99)
-                    }
+//                    .overlay {
+//                        Text("광고")
+//                            .style(.body3_Regular, .mainWhite)
+//                            .padding(8)
+//                            .background(Color.mainGray)
+//                            .cornerRadius(99)
+//                    }
                 GoogleAdView()
             }
             .frame(
@@ -43,7 +43,7 @@ struct GoogleAdView: UIViewControllerRepresentable {
         viewController.view.addSubview(banner)
         viewController.view.frame = CGRect(origin: .zero, size: bannerSize.size)
         
-        banner.adUnitID = Constant.testAdBanner
+        banner.adUnitID = Constant.realAdBanner
         banner.load(GADRequest())
         
         return viewController
