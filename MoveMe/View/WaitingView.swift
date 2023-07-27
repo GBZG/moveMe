@@ -31,24 +31,37 @@ struct WaitingView: View {
 
 private extension WaitingView {
     var map: some View {
-        VStack {
-            Map(
-                coordinateRegion: $viewModel.region,
-                showsUserLocation: true,
-                annotationItems: viewModel.mapLocations
-            ) {
-                MapAnnotation(coordinate: $0.coordinate) {
-                    Circle()
-                        .frame(width: 20, height: 20)
-                        .foregroundColor(.mainBlue)
-                        .overlay { Text("✓").foregroundColor(.mainWhite) }
-                }
+        
+        Map(
+            coordinateRegion: $viewModel.region,
+            showsUserLocation: true,
+            annotationItems: viewModel.mapLocations
+        ) {
+            MapAnnotation(coordinate: $0.coordinate) {
+                Circle()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(.mainBlue)
+                    .overlay { Text("✓").foregroundColor(.mainWhite) }
             }
-            .frame(height: 250)
         }
+        .frame(height: 250)
+        .disabled(true)
         .padding(.bottom)
+        .overlay {
+            VStack {
+                HStack {
+                    Text("목적지를 확인해보세요")
+                        .style(.body3_Medium, .mainWhite)
+                        .padding(8)
+                        .background(Color.black.opacity(0.6))
+                        .cornerRadius(12)
+                    Spacer()
+                }
+                Spacer()
+            }
+            .padding(12)
+        }
     }
-    
     
     var alarmSetting: some View {
         VStack(spacing: 0) {
