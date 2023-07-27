@@ -56,15 +56,21 @@ private extension StartingView {
                 .lineSpacing(3)
             
             Text("잠깐!")
-                .style(.body3_Medium)
+                .style(.body3_Medium, .mainRed)
                 .padding(.bottom, 8)
-            Text("위치 정보, 알림 설정 허용이 필요해요\n아래 버튼을 눌러 설정을 완료하세요")
-                .style(.body3_Regular)
+            
+            Text("뭅미는 위치 정보를 기억하는 알람이에요\n서비스 제공을 위해 여러분의 동의가 필요해요")
+                .style(.body3_Medium)
                 .multilineTextAlignment(.center)
-                .lineSpacing(1.5)
+                .lineSpacing(2.0)
+                .padding(.bottom, 8)
+
+            Text("아래 버튼을 눌러 설정을 완료하세요")
+                .style(.body3_Medium)
             
             Spacer()
-            
+            Text("위치 사용, 알림 허용하기")
+                .style(.caption, .gray)
             CustomButton(text: "알겠어요!") {
                 viewModel.didTapAccessButton(manager)
             }

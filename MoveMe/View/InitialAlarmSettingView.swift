@@ -55,20 +55,23 @@ private extension InitialAlarmSettingView {
     
     var mapIsNotAllowed: some View {
         VStack {
-            Text("👀")
-                .font(.largeTitle)
+            Text("이런!")
+                .style(.heading1_Bold, .gray)
+                .padding(.bottom, 8)
+            Text("지도를 불러올 수 없어요 👀")
+                .style(.heading2_Bold, .gray)
         }
         .frame(height: 350)
     }
     
     var alarmSetting: some View {
         VStack {
-            Text(authorizationStatus ? "현재 위치에서 알람을 설정해보세요" : "위치 정보 접근이 필요해요")
-                .style(.heading3_Bold)
-                .padding(.top, 10)
-                .padding(.bottom, 3)
-            
             if (authorizationStatus) {
+                Text("현재 위치에서 알람을 설정해보세요")
+                    .style(.heading3_Bold)
+                    .padding(.top, 10)
+                    .padding(.bottom, 3)
+                
                 Text("알람은 지정된 위치에서 해제 가능합니다.")
                     .style(.caption)
                     .padding(.bottom)
@@ -82,7 +85,7 @@ private extension InitialAlarmSettingView {
                 .datePickerStyle(.wheel)
                 
                 Spacer()
-
+                
                 CustomButton(text: "설정하기") { isAlertActive.toggle() }
                     .padding(.bottom)
                     .alert("알람 설정", isPresented: $isAlertActive) {
@@ -98,6 +101,21 @@ private extension InitialAlarmSettingView {
                     } message: {
                         Text("현재 위치에서 알람을 설정할까요?\n알람 시간은 \(currentDate.hourAndMinute) 입니다.")
                     }
+            }
+            else {
+                Text("위치 정보가 필요해요")
+                    .style(.heading3_Bold)
+                    .padding(.top, 10)
+                    .padding(.bottom, 3)
+                
+                Text("이전 페이지 혹은 설정에서 변경할 수 있어요.")
+                    .style()
+                
+                CustomButton(text: "설정으로 이동") {
+                    if let url = URL(string: UIApplication.openSettingsURLString) {
+                        UIApplication.shared.open(url)
+                    }
+                }
             }
         }
     }
