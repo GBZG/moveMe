@@ -62,6 +62,7 @@ final class NotificationManager: ObservableObject {
     func sendRepitition() {
         let content = UNMutableNotificationContent()
         content.title = "할때까지 반복할거야"
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "messageRingtone.mp3"))
         
         for i in 1...30 {
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(i * 2), repeats: false)

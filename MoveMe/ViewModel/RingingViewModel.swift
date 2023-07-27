@@ -48,9 +48,7 @@ final class RingingViewModel: ObservableObject {
 
 private extension RingingViewModel {
     func runAlarm() {
-        SoundManager.instance.stopBackgroundMusic()
-        SoundManager.instance.playAlarmMusic()
-        HapticManager.instance.vibration()
+        AlarmManager.instance.runAlarmImmediately()
     }
     
     // Calculate distance between original coordinate and the user's currnet location in meters.

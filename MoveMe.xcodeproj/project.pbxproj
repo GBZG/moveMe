@@ -25,7 +25,6 @@
 		7A28E6672A6D183100699DB4 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A28E6642A6D11DD00699DB4 /* Pretendard-Regular.otf */; };
 		7A28E66B2A6D464C00699DB4 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28E66A2A6D464C00699DB4 /* SettingView.swift */; };
 		7A28E66F2A6D500200699DB4 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28E66E2A6D500200699DB4 /* View+.swift */; };
-		7A28E6712A6D52F700699DB4 /* eveningOnTheBeach.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A28E6702A6D52F700699DB4 /* eveningOnTheBeach.mp3 */; };
 		7A28E6782A6D6E4C00699DB4 /* AdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28E6772A6D6E4C00699DB4 /* AdView.swift */; };
 		7A527E7C2A6D70710014F931 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 7A527E7B2A6D70710014F931 /* GoogleMobileAds */; };
 		7A545D722A6BB7F60092309E /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A545D712A6BB7F60092309E /* ContentViewModel.swift */; };
@@ -47,6 +46,7 @@
 		7AA92D2E2A71486F00EA6F9A /* StartingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA92D2D2A71486F00EA6F9A /* StartingViewModel.swift */; };
 		7AA92D302A71688000EA6F9A /* HalfSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA92D2F2A71688000EA6F9A /* HalfSheet.swift */; };
 		7AA92D322A718E9900EA6F9A /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA92D312A718E9900EA6F9A /* MapLocation.swift */; };
+		7AA92D342A720D2100EA6F9A /* messageRingtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7AA92D332A720D2100EA6F9A /* messageRingtone.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,7 +68,6 @@
 		7A28E6642A6D11DD00699DB4 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		7A28E66A2A6D464C00699DB4 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		7A28E66E2A6D500200699DB4 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
-		7A28E6702A6D52F700699DB4 /* eveningOnTheBeach.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = eveningOnTheBeach.mp3; sourceTree = "<group>"; };
 		7A28E6772A6D6E4C00699DB4 /* AdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdView.swift; sourceTree = "<group>"; };
 		7A545D712A6BB7F60092309E /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		7A545D742A6BC78E0092309E /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -91,6 +90,7 @@
 		7AA92D2D2A71486F00EA6F9A /* StartingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingViewModel.swift; sourceTree = "<group>"; };
 		7AA92D2F2A71688000EA6F9A /* HalfSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfSheet.swift; sourceTree = "<group>"; };
 		7AA92D312A718E9900EA6F9A /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
+		7AA92D332A720D2100EA6F9A /* messageRingtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = messageRingtone.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +175,7 @@
 				7A76538E2A50246000670C76 /* Info.plist */,
 				7A7653812A501C8B00670C76 /* Assets.xcassets */,
 				7A16AA712A518EC000DCD973 /* silentSound.wav */,
-				7A28E6702A6D52F700699DB4 /* eveningOnTheBeach.mp3 */,
+				7AA92D332A720D2100EA6F9A /* messageRingtone.mp3 */,
 				7A76537D2A501C8900670C76 /* MoveMeApp.swift */,
 				7A76538F2A50262200670C76 /* View */,
 				7A76538B2A501DEF00670C76 /* ViewModel */,
@@ -304,10 +304,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A28E6712A6D52F700699DB4 /* eveningOnTheBeach.mp3 in Resources */,
 				7A28E6652A6D183100699DB4 /* Pretendard-Bold.otf in Resources */,
 				7A7653852A501C8B00670C76 /* Preview Assets.xcassets in Resources */,
 				7A7653822A501C8B00670C76 /* Assets.xcassets in Resources */,
+				7AA92D342A720D2100EA6F9A /* messageRingtone.mp3 in Resources */,
 				7A28E6672A6D183100699DB4 /* Pretendard-Regular.otf in Resources */,
 				7A16AA732A518EC000DCD973 /* silentSound.wav in Resources */,
 				7A28E6662A6D183100699DB4 /* Pretendard-Medium.otf in Resources */,
@@ -480,7 +480,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"MoveMe/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = DL9N9GFVMW;
@@ -488,7 +488,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoveMe/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "뭅미";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 기반 알람 설정을 위해 사용자의 현재 위치 정보가 필요합니다.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "맞춤형 광고, 사용자 혜택 제공을 위한 사용 기록 추적을 허용하시겠습니까?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -503,7 +503,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.1.0;
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hyeonsang.moveMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -525,7 +525,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"MoveMe/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = DL9N9GFVMW;
@@ -533,7 +533,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoveMe/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "뭅미";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 기반 알람 설정을 위해 사용자의 현재 위치 정보가 필요합니다.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "맞춤형 광고, 사용자 혜택 제공을 위한 사용 기록 추적을 허용하시겠습니까?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -548,7 +548,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.1.0;
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hyeonsang.moveMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";

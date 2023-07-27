@@ -5,7 +5,7 @@
 //  Created by Noah's Ark on 2023/07/01.
 //
 
-import Foundation
+import UIKit
 import AVFoundation
 
 final class HapticManager {
@@ -14,7 +14,7 @@ final class HapticManager {
     let workItem = DispatchWorkItem {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
-
+    
     func vibration() {
         let status = UserDefaults.standard.string(forKey: Constant.alarmStatus)
         if (status == Constant.active) {
@@ -22,6 +22,22 @@ final class HapticManager {
                 self.queue.async(execute: self.workItem)
                 self.vibration()
             }
+        }
+    }
+    
+    func selectionVibrate() {
+        DispatchQueue.main.async {
+            let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
+            selectionFeedbackGenerator.prepare()
+            selectionFeedbackGenerator.selectionChanged()
+        }
+    }
+    
+    func hapticWithNotification(for type: UINotificationFeedbackGenerator.FeedbackType) {
+        DispatchQueue.main.async {
+            let notificationGenerator = UINotificationFeedbackGenerator()
+            notificationGenerator.prepare()
+            notificationGenerator.notificationOccurred(type)
         }
     }
 }

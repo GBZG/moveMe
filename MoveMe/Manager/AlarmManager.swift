@@ -26,6 +26,10 @@ final class AlarmManager: ObservableObject {
         
         runTimer(recentAlarmDate.alarmTimeSetting)
     }
+    
+    func runAlarmImmediately() {
+        runAlarm()
+    }
 }
 
 private extension AlarmManager {
@@ -52,10 +56,14 @@ private extension AlarmManager {
         
         RunLoop.main.add(timer!, forMode: .common)
         UserDefaults.standard.set(date, forKey: Constant.nextAlarm)
+        HapticManager.instance.hapticWithNotification(for: .success)
     }
 
     @objc func runAlarm() {
         UserDefaults.standard.set(Constant.active, forKey: Constant.alarmStatus)
+//        SoundManager.instance.stopBackgroundMusic()
+//        SoundManager.instance.playAlarmMusic()
+        HapticManager.instance.vibration()
         NotificationManager.instance.sendRepitition()
     }
     

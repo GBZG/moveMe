@@ -36,8 +36,19 @@ class SoundManager {
         }
     }
     
-    func playAlarmMusic() {
-        sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "eveningOnTheBeach", ofType: "mp3")!)
+    func playSoundWith(nameWithType: String) {
+        playCustomSound(nameWithType)
+    }
+    
+    func stopBackgroundMusic() {
+        guard let audioPlayer = audioPlayer else { return }
+        audioPlayer.stop()
+    }
+}
+
+private extension SoundManager {
+    func playCustomSound(_ named: String) {
+        sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: named, ofType: nil)!)
         
         do {
             try AVAudioSession.sharedInstance().setCategory(
@@ -58,10 +69,4 @@ class SoundManager {
             print("Cannot play the file")
         }
     }
-    
-    func stopBackgroundMusic() {
-        guard let audioPlayer = audioPlayer else { return }
-        audioPlayer.stop()
-    }
-    
 }

@@ -87,13 +87,13 @@ private extension SettingView {
     
     var acknowledment: some View {
         List {
-            Text("해변의 저녁 - SellBuyMusic (https://sellbuymusic.com/md/mpatchw-pcktnbx)")
+            Text("Message Ringtone - SergeQuadrado (Pixabay,https://pixabay.com)")
         }
     }
     
     var productInfo: some View {
         List {
-            Text("Version 0.0.1")
+            Text("Version 0.1.0")
             Text("Talk to @phainestha1 on Instagram")
             Text("Email to 250wons@gmail.com")
         }
