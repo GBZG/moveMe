@@ -87,15 +87,13 @@ private extension SettingView {
     
     var acknowledment: some View {
         List {
-            Text("Message Ringtone - SergeQuadrado (Pixabay,https://pixabay.com)")
+            Text("Message Ringtone - SergeQuadrado (Pixabay, https://pixabay.com)")
         }
     }
     
     var productInfo: some View {
         List {
-            Text("Version 0.1.0")
-            Text("Talk to @phainestha1 on Instagram")
-            Text("Email to 250wons@gmail.com")
+            Text("Version 0.2.2")
         }
 
     }

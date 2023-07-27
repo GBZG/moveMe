@@ -11,12 +11,24 @@ import GoogleMobileAds
 
 struct AdView: View {    
     var body: some View {
-        GoogleAdView()
+        ZStack {
+            Group {
+                Rectangle()
+                    .foregroundColor(.white)
+                    .overlay {
+                        Text("광고")
+                            .style(.body3_Regular, .mainWhite)
+                            .padding(8)
+                            .background(Color.mainGray)
+                            .cornerRadius(99)
+                    }
+                GoogleAdView()
+            }
             .frame(
                 width: Constant.screenWidth,
                 height: GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(Constant.screenWidth).size.height
             )
-
+        }
     }
 }
 

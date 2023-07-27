@@ -47,6 +47,7 @@
 		7AA92D302A71688000EA6F9A /* HalfSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA92D2F2A71688000EA6F9A /* HalfSheet.swift */; };
 		7AA92D322A718E9900EA6F9A /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA92D312A718E9900EA6F9A /* MapLocation.swift */; };
 		7AA92D342A720D2100EA6F9A /* messageRingtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7AA92D332A720D2100EA6F9A /* messageRingtone.mp3 */; };
+		7AA92D362A72387500EA6F9A /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA92D352A72387500EA6F9A /* ToastView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		7AA92D2F2A71688000EA6F9A /* HalfSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfSheet.swift; sourceTree = "<group>"; };
 		7AA92D312A718E9900EA6F9A /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
 		7AA92D332A720D2100EA6F9A /* messageRingtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = messageRingtone.mp3; sourceTree = "<group>"; };
+		7AA92D352A72387500EA6F9A /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				7A16AA882A51AEF200DCD973 /* CustomButton.swift */,
 				7A28E6772A6D6E4C00699DB4 /* AdView.swift */,
 				7AA92D2F2A71688000EA6F9A /* HalfSheet.swift */,
+				7AA92D352A72387500EA6F9A /* ToastView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				7A16AA892A51AEF200DCD973 /* CustomButton.swift in Sources */,
 				7A28E6602A6D0FAE00699DB4 /* GreetingView.swift in Sources */,
 				7AA92D322A718E9900EA6F9A /* MapLocation.swift in Sources */,
+				7AA92D362A72387500EA6F9A /* ToastView.swift in Sources */,
 				7A545D722A6BB7F60092309E /* ContentViewModel.swift in Sources */,
 				7A7653A82A5042E900670C76 /* AlarmView.swift in Sources */,
 				7A76538D2A501E0E00670C76 /* LocationManager.swift in Sources */,
@@ -503,7 +507,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.2.2;
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hyeonsang.moveMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -548,7 +552,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.2.2;
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hyeonsang.moveMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";

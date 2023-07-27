@@ -12,7 +12,7 @@ struct WaitingView: View {
     @AppStorage(Constant.scheduledHour) private var hour = ""
     @AppStorage(Constant.scheduledMinute) private var minute = ""
     @State private var currentDate = Date()
-    @State private var isChangeButtonTapped = false    
+    @State private var isChangeButtonTapped = false
     private var nextAlarmDate: String {
         let date = UserDefaults.standard.object(forKey: Constant.nextAlarm) as? Date
         guard let date = date else { return "" }
@@ -28,26 +28,41 @@ struct WaitingView: View {
 
 private extension WaitingView {
     var alarmSetting: some View {
-        ZStack {
-            VStack {
+        VStack(spacing: 0) {
+            HStack {
+                Text("다음 알람")
+                    .style(.heading3_Bold)
                 Spacer()
-                Text("다음 알람 시간이에요")
-                    .style(.body3_Regular)
-                    .padding(.bottom, 8)
-                
-                Text(nextAlarmDate)
-                    .style(.body3_Regular)
-                Text("\(hour) : \(Double(minute)! <= 9 ? "0\(minute)" : minute)")
-                    .font(.custom(Constant.pretendardBold, size: 48))
-                    .padding(.bottom, 20)
-                
-                Spacer()
-                
-                CustomButton(text: "변경하기") {
-                    isChangeButtonTapped.toggle()
-                }
             }
+            .padding(.bottom, 12)
+            
+            HStack {
+                Text(nextAlarmDate)
+                    .style(.caption, .gray)
+                Spacer()
+            }
+            .padding(.bottom, 3)
+            HStack {
+                Text("\(hour) : \(Double(minute)! <= 9 ? "0\(minute)" : minute)")
+                    .font(.custom(Constant.pretendardBold, size: 36))
+                    .padding(.vertical, 20)
+                    .padding(.horizontal, 12)
+                Spacer()
+            }
+            .frame(height: 72)
+            .background(Color.mainGray.opacity(0.3))
+            .cornerRadius(12)
+            .onTapGesture {
+                isChangeButtonTapped.toggle()
+            }
+            
+            Text("터치해서 시간을 변경할 수 있어요!")
+                .style(.caption, .gray)
+                .padding(.top, 12)
+            
+            Spacer()
         }
+        .padding(.horizontal, 12)
         .sheet(isPresented: $isChangeButtonTapped) {
             HalfSheet {
                 Spacer()

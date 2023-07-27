@@ -28,9 +28,9 @@ class HalfSheetController<Content>: UIHostingController<Content> where Content :
         super.viewWillAppear(animated)
         
         if let presentation = sheetPresentationController {
-            presentation.detents = [.medium(), .large()]
+            presentation.detents = [.medium()]
             presentation.prefersGrabberVisible = true
-            presentation.largestUndimmedDetentIdentifier = .medium
+            presentation.largestUndimmedDetentIdentifier = .large
         }
     }
 }

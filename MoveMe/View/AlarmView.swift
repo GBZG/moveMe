@@ -14,7 +14,7 @@ struct AlarmView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(spacing: 0) {
                 header
                 googleAd
                 Spacer()
@@ -38,10 +38,11 @@ private extension AlarmView {
                 isSettingButtonTapped.toggle()
             } label: {
                 Image(systemName: "gearshape.fill")
-                    .foregroundColor(.mainNavy)
+                    .foregroundColor(.mainWhite)
             }
         }
         .padding()
+        .background(Color.mainBlue)
     }
     
     var googleAd: some View {

@@ -11,6 +11,7 @@ import MapKit
 struct RingingView: View {
     @EnvironmentObject private var manager: LocationManager
     @ObservedObject private var viewModel = RingingViewModel()
+    @State private var didTapStopRepititionButton = false
     @State private var region: MKCoordinateRegion = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 0, longitude: 0),
         span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
@@ -26,28 +27,32 @@ struct RingingView: View {
         let savedLongitude = UserDefaults.standard.double(forKey: Constant.longitude)
         let coordinate = CLLocation(latitude: savedLatitude, longitude: savedLongitude)
         let distanceInMeters = currentLocation.distance(from: coordinate)
-
+        
         return Int(distanceInMeters)
     }
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             map
             alarmIsOn
+            Spacer()
         }
         .navigationBarHidden(true)
         .onAppear { region = viewModel.onAppear(manager) }
         .fullScreenCover(isPresented: $viewModel.isAlarmCompleted) {
             CompletionView(didTapReturnButton: $viewModel.isAlarmCompleted)
         }
+        .toast(
+            message: "반복 알림이 종료되었어요.",
+            isShowing: $didTapStopRepititionButton,
+            duration: Toast.short
+        )
     }
 }
 
 private extension RingingView {
     var map: some View {
         VStack {
-            Text("움직일 시간이에요!")
-                .style(.heading1_Bold)
             Map(
                 coordinateRegion: $region,
                 showsUserLocation: true,
@@ -60,12 +65,26 @@ private extension RingingView {
     
     var alarmIsOn: some View {
         VStack {
+            Text("움직일 시간이에요!")
+                .style(.heading1_Bold)
+                .padding(.bottom, 12)
             Text("남은 거리")
+                .style()
                 .padding(.bottom, 3)
             Text("\(distance)m")
-                .style(.heading2_Bold)
-                .padding(.bottom)
+                .style(.heading1_Bold, distance <= 12 ? .mainRed : .mainBlue)
             
+            Spacer()
+            
+            Button {
+                viewModel.didTapStopRepitition()
+                didTapStopRepititionButton.toggle()
+            } label: {
+                Text("반복 알림 멈추기")
+                    .style(.body2_Medium, .mainRed)
+            }
+            
+            .padding(.bottom, 12)
             CustomButton(text: "완료하기") {
                 viewModel.didTapCompleteButton(currentLocation: currentLocation)
             }
@@ -75,10 +94,8 @@ private extension RingingView {
                 Text("남은 거리 \(viewModel.distance ?? 0)m")
             }
             
-            Button("반복 알림 멈추기") {
-                viewModel.didTapStopRepitition()
-            }
         }
+        .padding(.bottom)
     }
 }
 
