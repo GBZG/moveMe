@@ -26,6 +26,7 @@ final class NotificationManager: ObservableObject {
         
         let content = UNMutableNotificationContent()
         content.title = "움직일 시간이에요!"
+        content.body = "오늘도 힘내세요 🔥"
         
         var dateComponents = DateComponents()
         dateComponents.hour = Calendar.current.component(.hour, from: currentDate)
@@ -46,7 +47,8 @@ final class NotificationManager: ObservableObject {
     // Send a warning when the user terminated the app.
     func sendTerminatedWarning() {
         let content = UNMutableNotificationContent()
-        content.title = "종료하지 마세요!!"
+        content.title = "뭅미를 종료하셨군요 🥺"
+        content.body = "앱을 종료하면 알람이 울리지 않을 수 있어요."
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
         
@@ -61,7 +63,9 @@ final class NotificationManager: ObservableObject {
     
     func sendRepitition() {
         let content = UNMutableNotificationContent()
-        content.title = "할때까지 반복할거야"
+        content.title = "뭅미 알림"
+        content.subtitle = "앱에서 반복 알림을 해제할 수 있어요."
+        content.body = "할 수 있다! 🔥"
         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "messageRingtone.mp3"))
         
         for i in 1...30 {
@@ -105,7 +109,8 @@ private extension NotificationManager {
         let timeOfRemind = currentDate.addingTimeInterval(-30 * 60)
         
         let content = UNMutableNotificationContent()
-        content.title = "도착 30분 전!!"
+        content.title = "출발 30분 전이에요 💙"
+        content.body = "여유롭게 출발해보는 것은 어떨까요?"
         
         var dateComponents = DateComponents()
         dateComponents.hour = Calendar.current.component(.hour, from: timeOfRemind)
