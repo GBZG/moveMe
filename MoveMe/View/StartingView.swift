@@ -12,6 +12,11 @@ struct StartingView: View {
     @ObservedObject private var viewModel = StartingViewModel()
     @State private var selection: Int = 1
     
+    init() {
+        UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(Color.mainBlue)
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor(Color.mainBlue).withAlphaComponent(0.2)
+    }
+    
     var body: some View {
         VStack(spacing: 0) {
             progressBar
@@ -20,7 +25,7 @@ struct StartingView: View {
                 introView.tag(2)
                 initialSettingView.tag(3)
             }
-            .tabViewStyle(.page(indexDisplayMode: .never))
+            .tabViewStyle(.page(indexDisplayMode: .always))
         }
         .onAppear { viewModel.onAppear() }
     }
@@ -45,7 +50,7 @@ private extension StartingView {
     var introView: some View {
         VStack {
             Spacer()
-
+            
             Text("StartingViewTitle".localized())
                 .style(.heading3_Bold, .mainBlue)
                 .padding(.bottom, 10)
@@ -64,7 +69,7 @@ private extension StartingView {
                 .multilineTextAlignment(.center)
                 .lineSpacing(2.0)
                 .padding(.bottom, 8)
-
+            
             Text("StartingViewSettingGuide".localized())
                 .style(.body3_Medium)
             
@@ -74,7 +79,7 @@ private extension StartingView {
             CustomButton(text: "StartingViewButtonLabel".localized()) {
                 viewModel.didTapAccessButton(manager)
             }
-            .padding(.bottom)
+            .padding(.bottom, 50)
         }
     }
     var initialSettingView: some View {
