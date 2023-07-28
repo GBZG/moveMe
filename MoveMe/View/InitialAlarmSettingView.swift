@@ -55,10 +55,10 @@ private extension InitialAlarmSettingView {
     
     var mapIsNotAllowed: some View {
         VStack {
-            Text("이런!")
+            Text("InitialSettingViewErrorTitle".localized())
                 .style(.heading1_Bold, .gray)
                 .padding(.bottom, 8)
-            Text("지도를 불러올 수 없어요 👀")
+            Text("InitialSettingViewErrorDescription".localized())
                 .style(.heading2_Bold, .gray)
         }
         .frame(height: 350)
@@ -67,14 +67,10 @@ private extension InitialAlarmSettingView {
     var alarmSetting: some View {
         VStack {
             if (authorizationStatus) {
-                Text("현재 위치에서 알람을 설정해보세요")
+                Text("InitialSettingViewAlarmSettingTitle".localized())
                     .style(.heading3_Bold)
                     .padding(.top, 10)
                     .padding(.bottom, 3)
-                
-                Text("알람은 지정된 위치에서 해제 가능합니다.")
-                    .style(.caption)
-                    .padding(.bottom)
                 
                 DatePicker(
                     "",
@@ -86,11 +82,11 @@ private extension InitialAlarmSettingView {
                 
                 Spacer()
                 
-                CustomButton(text: "설정하기") { isAlertActive.toggle() }
+                CustomButton(text: "InitialSettingViewAlarmButtonLabel".localized()) { isAlertActive.toggle() }
                     .padding(.bottom)
-                    .alert("알람 설정", isPresented: $isAlertActive) {
-                        Button("돌아가기") { }
-                        Button("완료하기") {
+                    .alert("InitialSettingViewAlertTitle".localized(), isPresented: $isAlertActive) {
+                        Button("InitialSettingViewAlertBack".localized()) { }
+                        Button("InitialSettingViewAlertComplete".localized()) {
                             isAlertActive.toggle()
                             viewModel.didTapCreateAlarmButton(
                                 currentDate: currentDate,
@@ -99,19 +95,19 @@ private extension InitialAlarmSettingView {
                             )
                         }
                     } message: {
-                        Text("현재 위치에서 알람을 설정할까요?\n알람 시간은 \(currentDate.hourAndMinute) 입니다.")
+                        Text("InitialSettingViewAlertMessage \(currentDate.hourAndMinute)")
                     }
             }
             else {
-                Text("위치 정보가 필요해요")
+                Text("InitialSettingViewErrorRequirement".localized())
                     .style(.heading3_Bold)
                     .padding(.top, 10)
                     .padding(.bottom, 3)
                 
-                Text("이전 페이지 혹은 설정에서 변경할 수 있어요.")
+                Text("InitialSettingViewErrorRequirementGuide".localized())
                     .style()
                 
-                CustomButton(text: "설정으로 이동") {
+                CustomButton(text: "InitialSettingViewErrorSettingButtonLabel".localized()) {
                     if let url = URL(string: UIApplication.openSettingsURLString) {
                         UIApplication.shared.open(url)
                     }

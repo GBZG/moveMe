@@ -40,6 +40,14 @@ extension Date {
         let day = calendar.component(.day, from: self)
         return "\(year)년 \(month)월 \(day)일"
     }
+    
+    var americanDateForm: String {
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: self)
+        let month = calendar.component(.month, from: self)
+        let day = calendar.component(.day, from: self)
+        return "\(month)-\(day)-\(year)"
+    }
 }
 
 // MARK: Alarm Setting

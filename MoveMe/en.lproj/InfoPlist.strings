@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  MoveMe
+
+  Created by Noah's Ark on 2023/07/28.
+  
+*/
+
+"NSTrackingUsageDescription" = "Would you allow tracking information for your personalized sevice such as ads, promotions?";
+"CFBundleDisplayName" = "mvme";

@@ -17,9 +17,17 @@ struct WaitingView: View {
     @State private var currentDate = Date()
     @State private var isChangeButtonTapped = false
     private var nextAlarmDate: String {
-        let date = UserDefaults.standard.object(forKey: Constant.nextAlarm) as? Date
-        guard let date = date else { return "" }
-        return date.koreanDateForm
+        guard let date = UserDefaults.standard.object(forKey: Constant.nextAlarm) as? Date
+        else { return "" }
+        if #available(iOS 16, *) {
+            guard let string = Locale.current.language.languageCode?.identifier else { return "" }
+            if string == "ko" { return date.koreanDateForm }
+            else { return date.americanDateForm}
+        } else {
+            guard let string = Locale.current.languageCode else { return "" }
+            if string == "ko" { return date.koreanDateForm }
+            else { return date.americanDateForm}
+        }
     }
     
     var body: some View {
@@ -31,7 +39,6 @@ struct WaitingView: View {
 
 private extension WaitingView {
     var map: some View {
-        
         Map(
             coordinateRegion: $viewModel.region,
             showsUserLocation: true,
@@ -50,7 +57,7 @@ private extension WaitingView {
         .overlay {
             VStack {
                 HStack {
-                    Text("목적지를 확인해보세요")
+                    Text("WaitingViewDestinationTitle".localized())
                         .style(.body3_Medium, .mainWhite)
                         .padding(8)
                         .background(Color.black.opacity(0.6))
@@ -66,7 +73,7 @@ private extension WaitingView {
     var alarmSetting: some View {
         VStack(spacing: 0) {
             HStack {
-                Text("다음 알람")
+                Text("WaitingViewNextAlarmTitle".localized())
                     .style(.heading3_Bold)
                 Spacer()
             }
@@ -92,7 +99,7 @@ private extension WaitingView {
                 isChangeButtonTapped.toggle()
             }
             
-            Text("터치해서 시간을 변경할 수 있어요!")
+            Text("WaitingViewChangeGuide".localized())
                 .style(.caption, .gray)
                 .padding(.top, 12)
             
@@ -103,7 +110,7 @@ private extension WaitingView {
             VStack {
                 map
                 Spacer()
-                Text("알람 시간을 변경할 수 있어요")
+                Text("WaitingViewChangeDescription".localized())
                     .style()
                     .padding(.bottom, 3)
                 DatePicker(
@@ -114,7 +121,7 @@ private extension WaitingView {
                 .labelsHidden()
                 .datePickerStyle(.wheel)
                 Spacer()
-                CustomButton(text: "완료") {
+                CustomButton(text: "WaitingViewChangeButtonLabel".localized()) {
                     viewModel.didTapAlarmChangeButton(currentDate)
                     isChangeButtonTapped.toggle()
                 }

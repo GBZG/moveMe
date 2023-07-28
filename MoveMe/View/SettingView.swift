@@ -21,7 +21,7 @@ struct SettingView: View {
         bodyView
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: dismissButton)
-            .navigationTitle("설정")
+            .navigationTitle("SettingViewSetting".localized())
             .navigationBarTitleDisplayMode(.inline)
             .popover(isPresented: $isAcknowledmentButtonTapped) {
                 acknowledment
@@ -47,7 +47,7 @@ private extension SettingView {
             } label: {
                 VStack {
                     HStack {
-                        Text("알림 설정")
+                        Text("SettingViewSetting".localized())
                         Spacer()
                         Image(systemName: "chevron.right")
                     }
@@ -60,7 +60,7 @@ private extension SettingView {
             } label: {
                 VStack {
                     HStack {
-                        Text("음원 정보")
+                        Text("SettingViewSoundInfo".localized())
                         Spacer()
                         Image(systemName: "chevron.right")
                     }
@@ -73,7 +73,7 @@ private extension SettingView {
             } label: {
                 VStack {
                     HStack {
-                        Text("서비스 정보")
+                        Text("SettingViewServiceInfo".localized())
                         Spacer()
                         Image(systemName: "chevron.right")
                     }
@@ -93,7 +93,7 @@ private extension SettingView {
     
     var productInfo: some View {
         List {
-            Text("Version 0.2.2")
+            Text("SettingViewServiceInfoAuthorEmail".localized())
         }
 
     }

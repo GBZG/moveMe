@@ -9,23 +9,22 @@ import SwiftUI
 import GoogleMobileAds
 
 struct GreetingView: View {
-    
     var body: some View {
         VStack {
-            Text("오늘도 못갔네")
+            Text("GreetingViewTodayFailure".localized())
                 .style(.body1_Bold, .mainGray)
-            Text("귀찮아")
+            Text("GreetingViewBothersome".localized())
                 .style(.body1_Bold, .mainGray)
-            Text("내일 해야지")
+            Text("GreetingViewTomorrow".localized())
                 .style(.body1_Bold, .mainGray)
-            Text("비가 와서 나가기 싫어")
+            Text("GreetingViewWeather".localized())
                 .style(.body1_Bold, .mainGray)
                 .padding(.bottom)
 
-            Text("실패는 이제 그만")
+            Text("GreetingViewTitle".localized())
                 .style(.heading3_Bold, .mainBlue)
                 .padding(.bottom, 5)
-            Text("뭅미는 여러분을 움직이게 만듭니다")
+            Text("GreetingViewIntroduction".localized())
                 .style(.body1_Bold)
                 .padding(.bottom, 40)
         }

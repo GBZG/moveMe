@@ -1,0 +1,68 @@
+/* 
+  Localizable.strings
+  MoveMe
+
+  Created by Noah's Ark on 2023/07/28.
+  
+*/
+
+// GreetingView
+"GreetingViewTitle" = "No More Failure";
+"GreetingViewIntroduction" = "mvme will make you move";
+"GreetingViewTodayFailure" = "I couldn't make it today";
+"GreetingViewBothersome" = "I don't want to do it";
+"GreetingViewTomorrow" = "Let's do it tomorrow";
+"GreetingViewWeather" = "The weather is too bad to go outside";
+
+// StartingView
+"StartingViewTitle" = "Complete Your Day!";
+"StartingViewExplanation" = "Set your alarm on your place\nThen mvme will help you to get there";
+"StartingViewFYITitle" = "FYI";
+"StartingViewFYIDescription" = "mvme is an alarm service with GPS\nPlease allow to use your relevant information";
+"StartingViewSettingGuide" = "Touch the button below and finish your setting";
+"StartingViewButtonDescription" = "Current Location, Notification Permission";
+"StartingViewButtonLabel" = "Got it!";
+
+// InitialSettingView
+// The case when the location information is not allowed
+"InitialSettingViewErrorTitle" = "Oops!";
+"InitialSettingViewErrorDescription" = "Something Happened";
+"InitialSettingViewErrorRequirement" = "We need a map here";
+"InitialSettingViewErrorRequirementGuide" = "Please allow to use location data";
+"InitialSettingViewErrorSettingButtonLabel" = "Move to Setting";
+
+// location info is allowed
+"InitialSettingViewAlarmSettingTitle" = "Set Your First Alarm";
+"InitialSettingViewAlarmButtonLabel" = "Complete";
+"InitialSettingViewAlertTitle" = "Alarm Setting";
+"InitialSettingViewAlertBack" = "Back";
+"InitialSettingViewAlertComplete" = "Complete";
+"InitialSettingViewAlertMessage %@" = "Please review alarm setting\n%@";
+
+// WaitingView
+"WaitingViewDestinationTitle" = "Check Your Destination";
+"WaitingViewNextAlarmTitle" = "Next Alarm";
+"WaitingViewChangeGuide" = "Touch and change your schedule!";
+"WaitingViewChangeDescription" = "Change your alarm";
+"WaitingViewChangeButtonLabel" = "Complete";
+
+// RingingView
+"RingingViewTitle" = "Time to MOVE!";
+"RingingViewDistanceLabel" = "Distance Left";
+"RingingViewStopRepititionButtonLabel" = "Stop Notifications";
+"RingingViewStopRepititionToastMessage" = "Canceled Notifications";
+"RingingViewStopAlertMessage" = "One step closer!";
+"RingingViewStopAlertButtonLabel" = "Close";
+"RingingViewStopAlertDistance %lld" = "%lldm left";
+"RingingViewStopCompleteButtonLabel" = "Complete";
+
+// CompletionView
+"CompletionViewTitle" = "Congratulation!";
+"CompletionViewDescription" = "You've got to the destination";
+"CompletionViewButtonLabel" = "Thank you!";
+
+// SettingView
+"SettingViewSetting" = "Setting";
+"SettingViewSoundInfo" = "Sound Info";
+"SettingViewServiceInfo" = "Service Info";
+"SettingViewServiceInfoAuthorEmail" = "Author: 250wons@gmail.com";

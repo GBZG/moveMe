@@ -46,32 +46,32 @@ private extension StartingView {
         VStack {
             Spacer()
 
-            Text("이제는 나도 갓생 마스터!")
+            Text("StartingViewTitle".localized())
                 .style(.heading3_Bold, .mainBlue)
                 .padding(.bottom, 10)
-            Text("원하는 장소에서 알람을 설정해보세요\n반드시 도착할 수 있게 도와드릴게요")
+            Text("StartingViewExplanation".localized())
                 .style(.body2_Bold)
                 .padding(.bottom, 40)
                 .multilineTextAlignment(.center)
                 .lineSpacing(3)
             
-            Text("잠깐!")
+            Text("StartingViewFYITitle".localized())
                 .style(.body3_Medium, .mainRed)
                 .padding(.bottom, 8)
             
-            Text("뭅미는 위치 정보를 기억하는 알람이에요\n서비스 제공을 위해 여러분의 동의가 필요해요")
+            Text("StartingViewFYIDescription".localized())
                 .style(.body3_Medium)
                 .multilineTextAlignment(.center)
                 .lineSpacing(2.0)
                 .padding(.bottom, 8)
 
-            Text("아래 버튼을 눌러 설정을 완료하세요")
+            Text("StartingViewSettingGuide".localized())
                 .style(.body3_Medium)
             
             Spacer()
-            Text("위치 사용, 알림 허용하기")
+            Text("StartingViewButtonDescription".localized())
                 .style(.caption, .gray)
-            CustomButton(text: "알겠어요!") {
+            CustomButton(text: "StartingViewButtonLabel".localized()) {
                 viewModel.didTapAccessButton(manager)
             }
             .padding(.bottom)

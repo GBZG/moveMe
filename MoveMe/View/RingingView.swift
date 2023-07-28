@@ -43,7 +43,7 @@ struct RingingView: View {
             CompletionView(didTapReturnButton: $viewModel.isAlarmCompleted)
         }
         .toast(
-            message: "반복 알림이 종료되었어요.",
+            message: "RingingViewStopRepititionToastMessage".localized(),
             isShowing: $didTapStopRepititionButton,
             duration: Toast.short
         )
@@ -65,10 +65,10 @@ private extension RingingView {
     
     var alarmIsOn: some View {
         VStack {
-            Text("움직일 시간이에요!")
+            Text("RingingViewTitle".localized())
                 .style(.heading1_Bold)
                 .padding(.bottom, 12)
-            Text("남은 거리")
+            Text("RingingViewDistanceLabel".localized())
                 .style()
                 .padding(.bottom, 3)
             Text("\(distance)m")
@@ -80,18 +80,18 @@ private extension RingingView {
                 viewModel.didTapStopRepitition()
                 didTapStopRepititionButton.toggle()
             } label: {
-                Text("반복 알림 멈추기")
+                Text("RingingViewStopRepititionButtonLabel".localized())
                     .style(.body2_Medium, .mainRed)
             }
             
             .padding(.bottom, 12)
-            CustomButton(text: "완료하기") {
+            CustomButton(text: "RingingViewStopCompleteButtonLabel".localized()) {
                 viewModel.didTapCompleteButton(currentLocation: currentLocation)
             }
-            .alert("더 가까이 가세요", isPresented: $viewModel.isAlertActive) {
-                Button("확인") { viewModel.tapAlertCloseButton() }
+            .alert("RingingViewStopAlertMessage".localized(), isPresented: $viewModel.isAlertActive) {
+                Button("RingingViewStopAlertButtonLabel".localized()) { viewModel.tapAlertCloseButton() }
             } message: {
-                Text("남은 거리 \(viewModel.distance ?? 0)m")
+                Text("RingingViewStopAlertDistance \(viewModel.distance ?? 0)")
             }
             
         }

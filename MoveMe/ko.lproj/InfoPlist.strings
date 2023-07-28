@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  MoveMe
+
+  Created by Noah's Ark on 2023/07/28.
+  
+*/
+
+"NSTrackingUsageDescription" = "맞춤형 광고, 프로모션 등 더 나은 서비스 제공을 위한 서비스 이용 정보 활용에 동의하시겠습니까?";
+"CFBundleDisplayName" = "뭅미";

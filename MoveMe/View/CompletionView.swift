@@ -39,14 +39,14 @@ private extension CompletionView {
                 Spacer()
                 Text("🎉")
                     .font(.largeTitle)
-                Text("축하합니다!")
+                Text("CompletionViewTitle".localized())
                     .style(.heading1_Bold)
                     .padding(.bottom)
-                Text("무사히 도착했어요.")
+                Text("CompletionViewDescription".localized())
                     .style()
                     .padding(.bottom, 10)
                 Spacer()
-                CustomButton(text: "돌아가기") {
+                CustomButton(text: "CompletionViewButtonLabel".localized()) {
                     didTapReturnButton.toggle()
                 }
             }

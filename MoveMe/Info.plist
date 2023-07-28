@@ -10,6 +10,8 @@
 	<string>ca-app-pub-3550877198529803~3359459495</string>
 	<key>GADIsAdManagerApp</key>
 	<true/>
+	<key>LSHasLocalizedDisplayName</key>
+	<true/>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>

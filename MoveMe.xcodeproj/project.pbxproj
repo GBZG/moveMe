@@ -48,6 +48,9 @@
 		7AA92D322A718E9900EA6F9A /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA92D312A718E9900EA6F9A /* MapLocation.swift */; };
 		7AA92D342A720D2100EA6F9A /* messageRingtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7AA92D332A720D2100EA6F9A /* messageRingtone.mp3 */; };
 		7AA92D362A72387500EA6F9A /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA92D352A72387500EA6F9A /* ToastView.swift */; };
+		7AA92D392A73734D00EA6F9A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AA92D3B2A73734D00EA6F9A /* Localizable.strings */; };
+		7AA92D422A737FFA00EA6F9A /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA92D412A737FFA00EA6F9A /* String+.swift */; };
+		7AA92D472A738E9E00EA6F9A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AA92D492A738E9E00EA6F9A /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +96,11 @@
 		7AA92D312A718E9900EA6F9A /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
 		7AA92D332A720D2100EA6F9A /* messageRingtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = messageRingtone.mp3; sourceTree = "<group>"; };
 		7AA92D352A72387500EA6F9A /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		7AA92D3A2A73734D00EA6F9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7AA92D3C2A73738600EA6F9A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7AA92D412A737FFA00EA6F9A /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		7AA92D482A738E9E00EA6F9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7AA92D4A2A738EA200EA6F9A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +142,7 @@
 				7A28E6592A6D030400699DB4 /* Text+.swift */,
 				7A28E65B2A6D0AD300699DB4 /* Color+.swift */,
 				7A28E66E2A6D500200699DB4 /* View+.swift */,
+				7AA92D412A737FFA00EA6F9A /* String+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -141,9 +150,12 @@
 		7A28E6612A6D111500699DB4 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				7A16AA712A518EC000DCD973 /* silentSound.wav */,
+				7AA92D332A720D2100EA6F9A /* messageRingtone.mp3 */,
 				7A28E6632A6D11DD00699DB4 /* Pretendard-Bold.otf */,
 				7A28E6622A6D11DD00699DB4 /* Pretendard-Medium.otf */,
 				7A28E6642A6D11DD00699DB4 /* Pretendard-Regular.otf */,
+				7AA92D3B2A73734D00EA6F9A /* Localizable.strings */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -176,9 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				7A76538E2A50246000670C76 /* Info.plist */,
+				7AA92D492A738E9E00EA6F9A /* InfoPlist.strings */,
 				7A7653812A501C8B00670C76 /* Assets.xcassets */,
-				7A16AA712A518EC000DCD973 /* silentSound.wav */,
-				7AA92D332A720D2100EA6F9A /* messageRingtone.mp3 */,
 				7A76537D2A501C8900670C76 /* MoveMeApp.swift */,
 				7A76538F2A50262200670C76 /* View */,
 				7A76538B2A501DEF00670C76 /* ViewModel */,
@@ -288,6 +299,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 7A7653712A501C8900670C76;
 			packageReferences = (
@@ -312,7 +324,9 @@
 				7A7653822A501C8B00670C76 /* Assets.xcassets in Resources */,
 				7AA92D342A720D2100EA6F9A /* messageRingtone.mp3 in Resources */,
 				7A28E6672A6D183100699DB4 /* Pretendard-Regular.otf in Resources */,
+				7AA92D392A73734D00EA6F9A /* Localizable.strings in Resources */,
 				7A16AA732A518EC000DCD973 /* silentSound.wav in Resources */,
+				7AA92D472A738E9E00EA6F9A /* InfoPlist.strings in Resources */,
 				7A28E6662A6D183100699DB4 /* Pretendard-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +350,7 @@
 				7A28E65C2A6D0AD300699DB4 /* Color+.swift in Sources */,
 				7A16AA702A518C6000DCD973 /* SoundManager.swift in Sources */,
 				7A16AA7A2A5196BD00DCD973 /* InitialAlarmSettingViewModel.swift in Sources */,
+				7AA92D422A737FFA00EA6F9A /* String+.swift in Sources */,
 				7A545D792A6CD26A0092309E /* CompletionView.swift in Sources */,
 				7A28E66F2A6D500200699DB4 /* View+.swift in Sources */,
 				7A545D752A6BC78E0092309E /* Constant.swift in Sources */,
@@ -362,11 +377,33 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		7AA92D3B2A73734D00EA6F9A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AA92D3A2A73734D00EA6F9A /* en */,
+				7AA92D3C2A73738600EA6F9A /* ko */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		7AA92D492A738E9E00EA6F9A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AA92D482A738E9E00EA6F9A /* en */,
+				7AA92D4A2A738EA200EA6F9A /* ko */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		7A7653862A501C8B00670C76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -427,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -491,10 +529,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoveMe/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "뭅미";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 기반 알람 설정을 위해 사용자의 현재 위치 정보가 필요합니다.";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "맞춤형 광고, 사용자 혜택 제공을 위한 사용 기록 추적을 허용하시겠습니까?";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(PRODUCT_NAME)";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This identifier will be used to set an alarm with location information.\n";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Would you allow tracking information for your personalized sevice such as ads, promotions?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -536,10 +574,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoveMe/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "뭅미";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 기반 알람 설정을 위해 사용자의 현재 위치 정보가 필요합니다.";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "맞춤형 광고, 사용자 혜택 제공을 위한 사용 기록 추적을 허용하시겠습니까?";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(PRODUCT_NAME)";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This identifier will be used to set an alarm with location information.\n";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Would you allow tracking information for your personalized sevice such as ads, promotions?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
