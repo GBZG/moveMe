@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AlarmView: View {
-    @ObservedObject private var viewModel = AlarmViewModel()
+    @StateObject private var viewModel = AlarmViewModel()
     @AppStorage(Constant.alarmStatus) private var alarmStatus = Constant.waiting
     @State private var isSettingButtonTapped = false
     

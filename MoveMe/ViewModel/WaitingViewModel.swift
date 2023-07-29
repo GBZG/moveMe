@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 import MapKit
 
 final class WaitingViewModel: ObservableObject {
@@ -14,18 +15,34 @@ final class WaitingViewModel: ObservableObject {
         span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
     )
     @Published var mapLocations: [MapLocation] = []
-    
-    func onAppear() {
-        loadMapData()
-        checkAlarmStatus()
+    @Published var count = 0
+    private var cancellables = Set<AnyCancellable>()
+
+    init() {
+        setUpTimer()
     }
+    
+    func setUpTimer() {
+        Timer
+            .publish(every: 1.0, on: .main, in: .common)
+            .autoconnect()
+            .sink { [weak self] _ in
+                guard let self = self else { return }
+                self.count += 1
+            }
+            .store(in: &cancellables)
+    }
+    
+    func onAppear() { loadMapData() }
+    
+    func onChange() { checkAlarmStatus() }
     
     func didTapAlarmChangeButton(_ currentDate: Date) {
         changeAlarm(currentDate)
     }
 }
 
-extension WaitingViewModel {    
+extension WaitingViewModel {
     func loadMapData() {
         let latitude = UserDefaults.standard.double(forKey: Constant.latitude)
         let longitude = UserDefaults.standard.double(forKey: Constant.longitude)
@@ -44,9 +61,8 @@ extension WaitingViewModel {
     }
 
     func checkAlarmStatus() {
-        let amount = NotificationManager.instance.getDeliveredNotifications()
-        print(amount)
-        if (amount > 0) { activateAlarm() }
+        guard let time = UserDefaults.standard.object(forKey: Constant.nextAlarm) as? Date else { return }
+        if (time.timeIntervalSinceNow <= 0) { activateAlarm() }
     }
     
     func activateAlarm() {

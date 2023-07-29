@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct WaitingView: View {
-    @ObservedObject private var viewModel = WaitingViewModel()
+    @StateObject private var viewModel = WaitingViewModel()
     @AppStorage(Constant.scheduledHour) private var hour = ""
     @AppStorage(Constant.scheduledMinute) private var minute = ""
     @AppStorage(Constant.latitude) private var latitude = ""
@@ -29,11 +29,14 @@ struct WaitingView: View {
             else { return date.americanDateForm}
         }
     }
-    
+
     var body: some View {
         alarmSetting
             .navigationBarHidden(true)
             .onAppear { viewModel.onAppear() }
+            .onChange(of: viewModel.count) { _ in
+                viewModel.onChange()
+            }
     }
 }
 

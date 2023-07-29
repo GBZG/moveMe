@@ -9,7 +9,7 @@ import Foundation
 
 final class AlarmViewModel: ObservableObject {
     func onAppear() {
-        checkAlarmStatus()
+
     }    
 }
 
