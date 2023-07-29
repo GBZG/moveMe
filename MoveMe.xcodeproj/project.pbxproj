@@ -26,7 +26,7 @@
 		7A28E66B2A6D464C00699DB4 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28E66A2A6D464C00699DB4 /* SettingView.swift */; };
 		7A28E66F2A6D500200699DB4 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28E66E2A6D500200699DB4 /* View+.swift */; };
 		7A28E6782A6D6E4C00699DB4 /* AdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28E6772A6D6E4C00699DB4 /* AdView.swift */; };
-		7A527E7C2A6D70710014F931 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 7A527E7B2A6D70710014F931 /* GoogleMobileAds */; };
+		7A3E55B52A75861F00956EAE /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 7A3E55B42A75861F00956EAE /* GoogleMobileAds */; };
 		7A545D722A6BB7F60092309E /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A545D712A6BB7F60092309E /* ContentViewModel.swift */; };
 		7A545D752A6BC78E0092309E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A545D742A6BC78E0092309E /* Constant.swift */; };
 		7A545D772A6BD5B00092309E /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A545D762A6BD5B00092309E /* AlarmManager.swift */; };
@@ -110,7 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A527E7C2A6D70710014F931 /* GoogleMobileAds in Frameworks */,
+				7A3E55B52A75861F00956EAE /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +162,13 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		7A3E55B32A75861F00956EAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7A545D732A6BC76D0092309E /* Constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +182,7 @@
 			children = (
 				7A76537C2A501C8900670C76 /* MoveMe */,
 				7A76537B2A501C8900670C76 /* Products */,
+				7A3E55B32A75861F00956EAE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -274,7 +282,7 @@
 			);
 			name = MoveMe;
 			packageProductDependencies = (
-				7A527E7B2A6D70710014F931 /* GoogleMobileAds */,
+				7A3E55B42A75861F00956EAE /* GoogleMobileAds */,
 			);
 			productName = MoveMe;
 			productReference = 7A76537A2A501C8900670C76 /* MoveMe.app */;
@@ -526,7 +534,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"MoveMe/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = DL9N9GFVMW;
@@ -534,7 +542,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoveMe/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = mvme;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This identifier will be used to set an alarm with location information.\n";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Would you allow tracking information for your personalized sevice such as ads, promotions?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -571,7 +579,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"MoveMe/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = DL9N9GFVMW;
@@ -579,7 +587,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoveMe/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = mvme;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This identifier will be used to set an alarm with location information.\n";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Would you allow tracking information for your personalized sevice such as ads, promotions?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -644,7 +652,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7A527E7B2A6D70710014F931 /* GoogleMobileAds */ = {
+		7A3E55B42A75861F00956EAE /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7A527E7A2A6D70710014F931 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
 			productName = GoogleMobileAds;
