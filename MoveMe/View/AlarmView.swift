@@ -26,7 +26,6 @@ struct AlarmView: View {
             }
         }
         .onAppear { viewModel.onAppear() }
-        .onDisappear { viewModel.onDisappear() }
     }
 }
 

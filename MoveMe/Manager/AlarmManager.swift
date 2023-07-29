@@ -37,7 +37,6 @@ private extension AlarmManager {
         let tomorrowAlarmTime = Date().tomorrow.alarmTimeSetting
         
         runTimer(tomorrowAlarmTime)
-        NotificationManager.instance.scheduleNotification(currentDate: tomorrowAlarmTime)
     }
     
     func runTimer(_ date: Date) {
@@ -62,11 +61,11 @@ private extension AlarmManager {
     @objc func runAlarm() {
         UserDefaults.standard.set(Constant.active, forKey: Constant.alarmStatus)
         HapticManager.instance.vibration()
-        NotificationManager.instance.sendRepitition()
     }
     
     func setNotification(_ date: Date) {
-        NotificationManager.instance.scheduleNotification(currentDate: date)
+        NotificationManager.instance.setStartNotification(currentDate: date)
+        NotificationManager.instance.scheduleRepitition(date)
     }
         
     func stopPreviousAlarm() {

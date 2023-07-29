@@ -22,7 +22,6 @@ final class InitialAlarmSettingViewModel: ObservableObject {
     
     func didTapCreateAlarmButton(currentDate: Date, latitude: Double?, longitude: Double?) {
         setInitialAlarm(currentDate, latitude, longitude)
-        setNotificationSchedule(currentDate)
     }
 }
 
@@ -48,9 +47,5 @@ private extension InitialAlarmSettingViewModel {
         } else {
             AlarmManager.instance.setTimer(currentDate)
         }
-    }
-    
-    func setNotificationSchedule(_ currentDate: Date) {
-        NotificationManager.instance.scheduleNotification(currentDate: currentDate)
     }
 }

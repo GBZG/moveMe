@@ -20,10 +20,13 @@ final class NotificationManager: ObservableObject {
         }
     }
     
-    func scheduleNotification(currentDate: Date) {
+    // Send TimeToMove notification regardless of year, month, day
+    // Just need to check hour and minute when it is required.
+    func setStartNotification(currentDate: Date) {
         removeAllNotifications()
         setReminder(currentDate)
         
+        // 출발할 시간이에요
         let content = UNMutableNotificationContent()
         content.title = "NotificationManagerAlarmTime".localized()
         content.body = "NotificationManagerAlarmDescription".localized()
@@ -43,25 +46,46 @@ final class NotificationManager: ObservableObject {
         
         UNUserNotificationCenter.current().add(request)
     }
-    
-    // Send a warning when the user terminated the app.
-    func sendTerminatedWarning() {
+        
+    // 반복 알림
+    func scheduleRepitition(_ alarmDate: Date) {
+        // TimeInterval Between AlarmDate and Now
+        var startingTime = alarmDate.timeIntervalSinceNow
+        if startingTime <= 0 {
+            startingTime = alarmDate.tomorrow.alarmTimeSetting.timeIntervalSinceNow
+        }
         let content = UNMutableNotificationContent()
-        content.title = "NotificationManagerTerminationTitle".localized()
-        content.body = "NotificationManagerTerminationDescription".localized()
+        content.title = "NotificationManagerRepititionTitle".localized()
+        content.body = "NotificationManagerRepititionDescription".localized()
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "messageRingtone.mp3"))
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        for i in 1...30 {
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: startingTime + TimeInterval(i * 2), repeats: false)
+            
+            let request = UNNotificationRequest(
+                identifier: UUID().uuidString,
+                content: content,
+                trigger: trigger
+            )
+            
+            UNUserNotificationCenter.current().add(request)
+        }
         
-        let request = UNNotificationRequest(
-            identifier: Constant.terminationWarning,
-            content: content,
-            trigger: trigger
-        )
-        
-        UNUserNotificationCenter.current().add(request)
+        for i in 0...30 {
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: startingTime + TimeInterval(60 + (i * 2)), repeats: true)
+            
+            let request = UNNotificationRequest(
+                identifier: UUID().uuidString,
+                content: content,
+                trigger: trigger
+            )
+            
+            UNUserNotificationCenter.current().add(request)
+        }
     }
     
-    func sendRepitition() {
+    func setImmediateRepitition() {
+        removeAllNotifications()
         let content = UNMutableNotificationContent()
         content.title = "NotificationManagerRepititionTitle".localized()
         content.body = "NotificationManagerRepititionDescription".localized()
@@ -92,11 +116,17 @@ final class NotificationManager: ObservableObject {
         }
     }
     
-    func removeAllNotifications() {
-        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    func getDeliveredNotifications() -> Int {
+        var quantity = 0
+        print("⭐️⭐️⭐️ Before: \(quantity)")
+        UNUserNotificationCenter.current().getDeliveredNotifications { notis in
+            quantity = notis.count
+        }
+        
+        print("⭐️⭐️⭐️ After: \(quantity)")
+        return quantity
     }
-
+    
     func stopRepitition() {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
@@ -124,5 +154,10 @@ private extension NotificationManager {
         )
         
         UNUserNotificationCenter.current().add(request)
+    }
+    
+    func removeAllNotifications() {
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
 }

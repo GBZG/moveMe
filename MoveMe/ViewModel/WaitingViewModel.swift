@@ -16,8 +16,19 @@ final class WaitingViewModel: ObservableObject {
     @Published var mapLocations: [MapLocation] = []
     
     func onAppear() {
-        let latitude = UserDefaults.standard.double(forKey: Constant.latitude) as Double
-        let longitude = UserDefaults.standard.double(forKey: Constant.longitude) as Double
+        loadMapData()
+        checkAlarmStatus()
+    }
+    
+    func didTapAlarmChangeButton(_ currentDate: Date) {
+        changeAlarm(currentDate)
+    }
+}
+
+extension WaitingViewModel {    
+    func loadMapData() {
+        let latitude = UserDefaults.standard.double(forKey: Constant.latitude)
+        let longitude = UserDefaults.standard.double(forKey: Constant.longitude)
         
         mapLocations = [
             MapLocation(
@@ -31,31 +42,34 @@ final class WaitingViewModel: ObservableObject {
             span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         )
     }
-    
-    func didTapAlarmChangeButton(_ currentDate: Date) {
-        changeAlarm(currentDate)
-        changeNotificationSchedule(currentDate)
-    }
-}
 
-extension WaitingViewModel {    
+    func checkAlarmStatus() {
+        let amount = NotificationManager.instance.getDeliveredNotifications()
+        print(amount)
+        if (amount > 0) { activateAlarm() }
+    }
+    
+    func activateAlarm() {
+        UserDefaults.standard.set(Constant.active, forKey: Constant.alarmStatus)
+        HapticManager.instance.vibration()
+        NotificationManager.instance.setImmediateRepitition()
+    }
+
     func changeAlarm(_ currentDate: Date) {
-        let hour = Calendar.current.component(.hour, from: currentDate)
-        let minute = Calendar.current.component(.minute, from: currentDate)
+        let date = currentDate.zeroSecond
+        let hour = Calendar.current.component(.hour, from: date)
+        let minute = Calendar.current.component(.minute, from: date)
         
         // Seve New Alarm Data
         UserDefaults.standard.set(hour, forKey: Constant.scheduledHour)
         UserDefaults.standard.set(minute, forKey: Constant.scheduledMinute)
                 
-        if (Date() >= currentDate) {
+        if (Date() >= date) {
             // When the user select past time. Then set tomorrow alarm
             AlarmManager.instance.setTimer(currentDate.tomorrow)
         } else {
             AlarmManager.instance.setTimer(currentDate)
         }
-    }
-    
-    func changeNotificationSchedule(_ currentDate: Date) {
-        NotificationManager.instance.scheduleNotification(currentDate: currentDate)
-    }
+    }    
 }
+

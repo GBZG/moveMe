@@ -19,7 +19,7 @@ final class RingingViewModel: ObservableObject {
     func onAppear(_ manager: LocationManager) -> MKCoordinateRegion {
         runAlarm()
         playAlarmSound()
-        NotificationManager.instance.sendRepitition()
+//        NotificationManager.instance.sendRepitition()
         let region = MKCoordinateRegion(
             center: CLLocationCoordinate2D(
                 latitude: manager.coordinate?.latitude ?? 0 ,

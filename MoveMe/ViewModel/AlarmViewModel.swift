@@ -9,12 +9,8 @@ import Foundation
 
 final class AlarmViewModel: ObservableObject {
     func onAppear() {
-        restartAlarm()
-    }
-    
-    func onDisappear() {
-        sendTerminationWarning()
-    }
+        checkAlarmStatus()
+    }    
 }
 
 private extension AlarmViewModel {
@@ -22,8 +18,15 @@ private extension AlarmViewModel {
         AlarmManager.instance.restartRecentAlarm()
     }
     
-    func sendTerminationWarning() {
-        NotificationManager.instance.stopRepitition()
-        NotificationManager.instance.sendTerminatedWarning()
+    func checkAlarmStatus() {
+        let amount = NotificationManager.instance.getDeliveredNotifications()
+        print(amount)
+        if (amount > 0) { activateAlarm() }
     }
-}
+    
+    func activateAlarm() {
+        UserDefaults.standard.set(Constant.active, forKey: Constant.alarmStatus)
+        HapticManager.instance.vibration()
+        NotificationManager.instance.setImmediateRepitition()
+    }
+ }

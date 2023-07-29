@@ -10,13 +10,4 @@ import Foundation
 final class ContentViewModel: ObservableObject {
     @Published var locationManager = LocationManager()
     
-    func onDisappear() {
-        sendTerminationWarning()
-    }
-}
-
-private extension ContentViewModel {    
-    func sendTerminationWarning() {
-        NotificationManager.instance.sendTerminatedWarning()
-    }
 }

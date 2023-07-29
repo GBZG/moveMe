@@ -70,9 +70,7 @@
 // Notification Manager
 "NotificationManagerAlarmTime" = "움직일 시간이에요!";
 "NotificationManagerAlarmDescription" = "오늘도 힘내세요 🔥";
-"NotificationManagerTerminationTitle" = "뭅미를 종료하셨군요 🥺";
-"NotificationManagerTerminationDescription" = "앱을 종료하면 알람이 울리지 않을 수 있어요.";
 "NotificationManagerRepititionTitle" = "뭅미 알림";
-"NotificationManagerRepititionDescription" = "할 수 있다! 🔥 (앱에서 반복 알림을 해제할 수 있어요.)";
+"NotificationManagerRepititionDescription" = "할 수 있다! 🔥";
 "NotificationManagerRepititionReminderTitle" = "출발 30분 전이에요 💙";
 "NotificationManagerRepititionReminderDescription" = "여유롭게 출발해보는 것은 어떨까요?";
