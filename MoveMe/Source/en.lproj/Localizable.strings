@@ -66,3 +66,13 @@
 "SettingViewSoundInfo" = "Sound Info";
 "SettingViewServiceInfo" = "Service Info";
 "SettingViewServiceInfoAuthorEmail" = "Author: 250wons@gmail.com";
+
+// Notification Manager
+"NotificationManagerAlarmTime" = "Time to mvme!";
+"NotificationManagerAlarmDescription" = "Complete your day! 🔥";
+"NotificationManagerTerminationTitle" = "mvme was terminated 🥺";
+"NotificationManagerTerminationDescription" = "Your alarm may not ring";
+"NotificationManagerRepititionTitle" = "mvme Notification";
+"NotificationManagerRepititionDescription" = "You can do it! 🔥 (앱에서 반복 알림을 해제할 수 있어요.)";
+"NotificationManagerRepititionReminderTitle" = "30mins left to start! 💙";
+"NotificationManagerRepititionReminderDescription" = "What about to start early?";

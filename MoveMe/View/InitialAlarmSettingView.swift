@@ -97,6 +97,7 @@ private extension InitialAlarmSettingView {
                     } message: {
                         Text("InitialSettingViewAlertMessage \(currentDate.hourAndMinute)")
                     }
+                    .padding(.bottom, 50)
             }
             else {
                 Text("InitialSettingViewErrorRequirement".localized())
