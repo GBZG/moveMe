@@ -43,6 +43,10 @@ final class RingingViewModel: ObservableObject {
     func didTapStopRepitition() {
         stopRepitition()
     }
+    
+    func didTapDelayButton() {
+        delayAlarmFiveMinutes()
+    }
 }
 
 private extension RingingViewModel {
@@ -53,6 +57,25 @@ private extension RingingViewModel {
     
     func runAlarm() {
         AlarmManager.instance.runAlarmImmediately()
+    }
+    
+    func delayAlarmFiveMinutes() {
+        guard let alarmData = alarmData else { return }
+        
+        var components = DateComponents()
+        components.minute = 5
+        let date = Calendar.current.date(byAdding: components, to: Date())!
+        let hour = Int16(Calendar.current.component(.hour, from: date))
+        let minute = Int16(Calendar.current.component(.minute, from: date))
+        
+        CoreDataManager.instance.editAlarm(
+            alarm: alarmData,
+            date: date,
+            hour: hour,
+            minute: minute
+        )
+        AlarmManager.instance.setTimer(date)
+        UserDefaults.standard.set(Constant.waiting, forKey: Constant.alarmStatus)
     }
     
     // Calculate distance between original coordinate and the user's currnet location in meters.

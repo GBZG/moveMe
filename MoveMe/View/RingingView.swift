@@ -76,6 +76,11 @@ private extension RingingView {
                 .padding(.bottom, 3)
             Text("\(distance)m")
                 .style(.heading1_Bold, distance <= 12 ? .mainRed : .mainBlue)
+                .padding(.bottom, 12)
+            
+//            Button("RingingViewDelay5MinsButtonLabel".localized()) {
+//                viewModel.didTapDelayButton()
+//            }
             
             Spacer()
             
@@ -86,8 +91,8 @@ private extension RingingView {
                 Text("RingingViewStopRepititionButtonLabel".localized())
                     .style(.body2_Medium, .mainRed)
             }
-            
             .padding(.bottom, 12)
+            
             CustomButton(text: "RingingViewStopCompleteButtonLabel".localized()) {
                 viewModel.didTapCompleteButton(currentLocation: currentLocation)
             }

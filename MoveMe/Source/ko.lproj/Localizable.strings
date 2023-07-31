@@ -56,6 +56,7 @@
 "RingingViewStopAlertButtonLabel" = "확인";
 "RingingViewStopAlertDistance %lld" = "남은 거리 %lldm";
 "RingingViewStopCompleteButtonLabel" = "완료하기";
+"RingingViewDelay5MinsButtonLabel" = "5분 미루기";
 
 // CompletionView
 "CompletionViewTitle" = "축하합니다!";
