@@ -45,6 +45,7 @@
 "WaitingViewChangeGuide" = "Touch and change your schedule!";
 "WaitingViewChangeDescription" = "Change your alarm";
 "WaitingViewChangeButtonLabel" = "Complete";
+"WaitingViewMyRecordTitle" = "My Record";
 
 // RingingView
 "RingingViewTitle" = "Time to MOVE!";

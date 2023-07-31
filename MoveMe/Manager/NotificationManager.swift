@@ -60,7 +60,10 @@ final class NotificationManager: ObservableObject {
         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "messageRingtone.mp3"))
         
         for i in 1...30 {
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: startingTime + TimeInterval(i * 2), repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(
+                timeInterval: startingTime + TimeInterval(i * 2),
+                repeats: false
+            )
             
             let request = UNNotificationRequest(
                 identifier: UUID().uuidString,
@@ -72,7 +75,10 @@ final class NotificationManager: ObservableObject {
         }
         
         for i in 0...30 {
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: startingTime + TimeInterval(60 + (i * 2)), repeats: true)
+            let trigger = UNTimeIntervalNotificationTrigger(
+                timeInterval: startingTime + TimeInterval(60 + (i * 2)),
+                repeats: true
+            )
             
             let request = UNNotificationRequest(
                 identifier: UUID().uuidString,
@@ -92,7 +98,10 @@ final class NotificationManager: ObservableObject {
         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "messageRingtone.mp3"))
         
         for i in 1...30 {
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(i * 2), repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(
+                timeInterval: TimeInterval(i * 2),
+                repeats: false
+            )
             
             let request = UNNotificationRequest(
                 identifier: UUID().uuidString,
@@ -104,7 +113,10 @@ final class NotificationManager: ObservableObject {
         }
         
         for i in 0...30 {
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(60 + (i * 2)), repeats: true)
+            let trigger = UNTimeIntervalNotificationTrigger(
+                timeInterval: TimeInterval(60 + (i * 2)),
+                repeats: true
+            )
             
             let request = UNNotificationRequest(
                 identifier: UUID().uuidString,
@@ -114,17 +126,6 @@ final class NotificationManager: ObservableObject {
             
             UNUserNotificationCenter.current().add(request)
         }
-    }
-    
-    func getDeliveredNotifications() -> Int {
-        var quantity = 0
-        print("⭐️⭐️⭐️ Before: \(quantity)")
-        UNUserNotificationCenter.current().getDeliveredNotifications { notis in
-            quantity = notis.count
-        }
-        
-        print("⭐️⭐️⭐️ After: \(quantity)")
-        return quantity
     }
     
     func stopRepitition() {

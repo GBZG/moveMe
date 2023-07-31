@@ -23,9 +23,10 @@ struct RingingView: View {
         )
     }
     private var distance: Int {
-        let savedLatitude = UserDefaults.standard.double(forKey: Constant.latitude)
-        let savedLongitude = UserDefaults.standard.double(forKey: Constant.longitude)
-        let coordinate = CLLocation(latitude: savedLatitude, longitude: savedLongitude)
+        guard let alarmData = viewModel.alarmData else { return 0 }
+        let latitude = alarmData.latitude
+        let longitude = alarmData.longitude
+        let coordinate = CLLocation(latitude: latitude, longitude: longitude)
         let distanceInMeters = currentLocation.distance(from: coordinate)
         
         return Int(distanceInMeters)
@@ -40,7 +41,9 @@ struct RingingView: View {
         .navigationBarHidden(true)
         .onAppear { region = viewModel.onAppear(manager) }
         .fullScreenCover(isPresented: $viewModel.isAlarmCompleted) {
-            CompletionView(didTapReturnButton: $viewModel.isAlarmCompleted)
+            CompletionView(
+                didTapReturnButton: $viewModel.isAlarmCompleted
+            )
         }
         .toast(
             message: "RingingViewStopRepititionToastMessage".localized(),

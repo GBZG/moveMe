@@ -20,9 +20,7 @@ struct AlarmView: View {
                 Spacer()
                 bodyView
                 Spacer()
-                NavigationLink("", isActive: $isSettingButtonTapped) {
-                    SettingView()
-                }
+                navigation
             }
         }
         .onAppear { viewModel.onAppear() }
@@ -46,6 +44,12 @@ private extension AlarmView {
     
     var googleAd: some View {
         AdView()
+    }
+    
+    var navigation: some View {
+        NavigationLink("", isActive: $isSettingButtonTapped) {
+            SettingView()
+        }
     }
     
     @ViewBuilder

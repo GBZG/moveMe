@@ -54,23 +54,44 @@ extension Date {
         let day = calendar.component(.day, from: self)
         return "\(month)-\(day)-\(year)"
     }
+    
+    var convertToLocalDateForm: String {
+        if #available(iOS 16, *) {
+            guard let string = Locale.current.language.languageCode?.identifier else { return "" }
+            if string == "ko" { return self.koreanDateForm }
+            else { return self.americanDateForm}
+        } else {
+            guard let string = Locale.current.languageCode else { return "" }
+            if string == "ko" { return self.koreanDateForm }
+            else { return self.americanDateForm}
+        }
+    }
+    
+    var historyForm: String {
+        let date = self.convertToLocalDateForm
+        let time = self.hourAndMinute
+        
+        return "\(date) \(time)"
+    }
 }
 
 // MARK: Alarm Setting
 extension Date {
     var alarmTimeSetting: Date {
+        guard let alarmData = CoreDataManager.instance.getAllAlarms().first else { return Date() }
         var components = DateComponents()
-        components.hour = UserDefaults.standard.integer(forKey: Constant.scheduledHour)
-        components.minute = UserDefaults.standard.integer(forKey: Constant.scheduledMinute)
+        components.hour = Int(alarmData.hour)
+        components.minute = Int(alarmData.minute)
         components.second = 0
         
         return Calendar.current.date(byAdding: components, to: startOfDay)!
     }
         
     var alarmTimeOfTomorrow: Date {
+        guard let alarmData = CoreDataManager.instance.getAllAlarms().first else { return Date() }
         var components = DateComponents()
-        components.hour = UserDefaults.standard.integer(forKey: Constant.scheduledHour)
-        components.minute = UserDefaults.standard.integer(forKey: Constant.scheduledMinute)
+        components.hour = Int(alarmData.hour)
+        components.minute = Int(alarmData.minute)
         components.second = 0
         
         return Calendar.current.date(byAdding: components, to: tomorrow)!

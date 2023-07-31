@@ -5,6 +5,7 @@
 //  Created by Noah's Ark on 2023/07/23.
 //
 
+import CoreData
 import SwiftUI
 
 struct CompletionView: View {

@@ -36,27 +36,8 @@ class SoundManager {
         }
     }
     
-    func playSoundWith(nameWithType: String) {
-        playCustomSound(nameWithType)
-    }
-    
     func stopBackgroundMusic() {
         guard let audioPlayer = audioPlayer else { return }
         audioPlayer.stop()
-    }
-}
-
-private extension SoundManager {
-    func playCustomSound(_ named: String) {
-//        guard let path = Bundle.main.path(forResource: named, ofType: nil) else { return }
-//        let url = URL(fileURLWithPath: path)
-//
-//        do {
-//            audioPlayer = try AVAudioPlayer(contentsOf: url)
-//            audioPlayer!.numberOfLoops = -1
-//            audioPlayer!.play()
-//        } catch {
-//            print("Cannot play the file")
-//        }
     }
 }

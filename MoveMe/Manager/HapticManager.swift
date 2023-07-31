@@ -16,7 +16,7 @@ final class HapticManager {
     }
     
     func vibration() {
-        let status = UserDefaults.standard.string(forKey: Constant.alarmStatus)
+        guard let status = UserDefaults.standard.string(forKey: Constant.alarmStatus) else { return }
         if (status == Constant.active) {
             DispatchQueue(label: "vibration").asyncAfter(deadline: .now() + 1) {
                 self.queue.async(execute: self.workItem)

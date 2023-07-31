@@ -9,17 +9,15 @@ import Foundation
 import MapKit
 
 final class RingingViewModel: ObservableObject {
+    @Published var alarmData: AlarmEntity?
     @Published var distance: Int? = nil
     @Published var isAlertActive = false
     @Published var isAlarmCompleted = false
     @Published var savedCoordiates: CLLocation? = nil
-    @Published var scheduledHour = UserDefaults.standard.integer(forKey: Constant.scheduledHour)
-    @Published var scheduledMinute = UserDefaults.standard.integer(forKey: Constant.scheduledMinute)
-
+    
     func onAppear(_ manager: LocationManager) -> MKCoordinateRegion {
+        loadAlarmData()
         runAlarm()
-        playAlarmSound()
-//        NotificationManager.instance.sendRepitition()
         let region = MKCoordinateRegion(
             center: CLLocationCoordinate2D(
                 latitude: manager.coordinate?.latitude ?? 0 ,
@@ -48,15 +46,21 @@ final class RingingViewModel: ObservableObject {
 }
 
 private extension RingingViewModel {
+    func loadAlarmData() {
+        guard let data = CoreDataManager.instance.getAllAlarms().first else { return }
+        alarmData = data
+    }
+    
     func runAlarm() {
         AlarmManager.instance.runAlarmImmediately()
     }
     
     // Calculate distance between original coordinate and the user's currnet location in meters.
     func getDistanceInMeters(_ currentLocation: CLLocation) -> Double {
-        let savedLatitude = UserDefaults.standard.double(forKey: Constant.latitude)
-        let savedLongitude = UserDefaults.standard.double(forKey: Constant.longitude)
-        let coordinate = CLLocation(latitude: savedLatitude, longitude: savedLongitude)
+        guard let alarmData = alarmData else { return 0 }
+        let latitude = alarmData.latitude
+        let longitude = alarmData.longitude
+        let coordinate = CLLocation(latitude: latitude, longitude: longitude)
         savedCoordiates = coordinate
         
         let distanceInMeters = currentLocation.distance(from: coordinate)
@@ -64,11 +68,8 @@ private extension RingingViewModel {
         return distanceInMeters
     }
     
-    func playAlarmSound() {
-        SoundManager.instance.playSoundWith(nameWithType: Constant.ringtoneSound)
-    }
-    
     func completeAlarm() {
+        AlarmManager.instance.completeAlarm()
         SoundManager.instance.stopBackgroundMusic()
         SoundManager.instance.playSilentMusic()
         isAlarmCompleted = true

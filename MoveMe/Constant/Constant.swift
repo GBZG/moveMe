@@ -15,11 +15,7 @@ struct Constant {
 // MARK: Alarm Data
 extension Constant {
     static let alarmStatus = "alarmStatus"
-    static let isAlarmSet = "isAlarmSet"
-    static let scheduledHour = "scheduledHour"
-    static let scheduledMinute = "scheduledMinute"
-    static let nextAlarm = "nextAlarm"
-    
+    static let isFirstLaunch = "isFirstLaunch"
     static let active = "active"
     static let waiting = "waiting"
 }

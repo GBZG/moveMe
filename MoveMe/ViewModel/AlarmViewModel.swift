@@ -8,25 +8,16 @@
 import Foundation
 
 final class AlarmViewModel: ObservableObject {
+    @Published var alarmData: AlarmEntity?
+    
     func onAppear() {
-
-    }    
+        loadAlarmData()
+    }
 }
 
 private extension AlarmViewModel {
-    func restartAlarm() {
-        AlarmManager.instance.restartRecentAlarm()
-    }
-    
-    func checkAlarmStatus() {
-        let amount = NotificationManager.instance.getDeliveredNotifications()
-        print(amount)
-        if (amount > 0) { activateAlarm() }
-    }
-    
-    func activateAlarm() {
-        UserDefaults.standard.set(Constant.active, forKey: Constant.alarmStatus)
-        HapticManager.instance.vibration()
-        NotificationManager.instance.setImmediateRepitition()
-    }
- }
+    func loadAlarmData() {
+        guard let data = CoreDataManager.instance.getAllAlarms().first else { return }
+        alarmData = data
+    }    
+}

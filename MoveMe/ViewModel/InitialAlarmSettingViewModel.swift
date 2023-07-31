@@ -30,21 +30,27 @@ private extension InitialAlarmSettingViewModel {
         let hour = Calendar.current.component(.hour, from: currentDate)
         let minute = Calendar.current.component(.minute, from: currentDate)
         
-        // Save Coordinate Data of the Destination
-        UserDefaults.standard.set(latitude, forKey: Constant.latitude)
-        UserDefaults.standard.set(longitude, forKey: Constant.longitude)
-        
         // Change the Current View from Starting to Alarm
-        UserDefaults.standard.set(true, forKey: Constant.isAlarmSet)
-
-        // Seve Alarm Data
-        UserDefaults.standard.set(hour, forKey: Constant.scheduledHour)
-        UserDefaults.standard.set(minute, forKey: Constant.scheduledMinute)
+        UserDefaults.standard.set(true, forKey: Constant.isFirstLaunch)
                 
         if (Date() >= currentDate) {
             // When the user select past time. Then set tomorrow alarm
+            CoreDataManager.instance.createAlarm(
+                date: currentDate.tomorrow,
+                hour: Int16(hour),
+                minute: Int16(minute),
+                latitude: latitude ?? 0,
+                longitude: longitude ?? 0
+            )
             AlarmManager.instance.setTimer(currentDate.tomorrow)
         } else {
+            CoreDataManager.instance.createAlarm(
+                date: currentDate,
+                hour: Int16(hour),
+                minute: Int16(minute),
+                latitude: latitude ?? 0,
+                longitude: longitude ?? 0
+            )
             AlarmManager.instance.setTimer(currentDate)
         }
     }

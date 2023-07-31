@@ -10,33 +10,25 @@ import MapKit
 
 struct WaitingView: View {
     @StateObject private var viewModel = WaitingViewModel()
-    @AppStorage(Constant.scheduledHour) private var hour = ""
-    @AppStorage(Constant.scheduledMinute) private var minute = ""
-    @AppStorage(Constant.latitude) private var latitude = ""
-    @AppStorage(Constant.longitude) private var longitude = ""
     @State private var currentDate = Date()
     @State private var isChangeButtonTapped = false
-    private var nextAlarmDate: String {
-        guard let date = UserDefaults.standard.object(forKey: Constant.nextAlarm) as? Date
-        else { return "" }
-        if #available(iOS 16, *) {
-            guard let string = Locale.current.language.languageCode?.identifier else { return "" }
-            if string == "ko" { return date.koreanDateForm }
-            else { return date.americanDateForm}
-        } else {
-            guard let string = Locale.current.languageCode else { return "" }
-            if string == "ko" { return date.koreanDateForm }
-            else { return date.americanDateForm}
-        }
-    }
-
+    
     var body: some View {
-        alarmSetting
-            .navigationBarHidden(true)
-            .onAppear { viewModel.onAppear() }
-            .onChange(of: viewModel.count) { _ in
-                viewModel.onChange()
+        VStack {
+            if viewModel.alarmData != nil {
+                alarmSetting
+                statistics
+                Spacer()
+            } else {
+                Text("Alarm Data Not Found")
             }
+        }
+        .padding(.horizontal, 12)
+        .navigationBarHidden(true)
+        .onAppear { viewModel.onAppear() }
+        .onChange(of: viewModel.count) { _ in
+            viewModel.onChange()
+        }
     }
 }
 
@@ -83,13 +75,13 @@ private extension WaitingView {
             .padding(.bottom, 12)
             
             HStack {
-                Text(nextAlarmDate)
+                Text(viewModel.alarmData?.date?.convertToLocalDateForm ?? "")
                     .style(.caption, .gray)
                 Spacer()
             }
             .padding(.bottom, 3)
             HStack {
-                Text("\(hour) : \(Double(minute)! <= 9 ? "0\(minute)" : minute)")
+                Text(viewModel.alarmTime)
                     .font(.custom(Constant.pretendardBold, size: 36))
                     .padding(.vertical, 20)
                     .padding(.horizontal, 12)
@@ -105,10 +97,8 @@ private extension WaitingView {
             Text("WaitingViewChangeGuide".localized())
                 .style(.caption, .gray)
                 .padding(.top, 12)
-            
-            Spacer()
         }
-        .padding(.horizontal, 12)
+        .padding(.bottom, 8)
         .sheet(isPresented: $isChangeButtonTapped) {
             VStack {
                 map
@@ -128,6 +118,33 @@ private extension WaitingView {
                     viewModel.didTapAlarmChangeButton(currentDate)
                     isChangeButtonTapped.toggle()
                 }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    var statistics: some View {
+        VStack {
+            if viewModel.history.isEmpty { }
+            else {
+                HStack {
+                    Text("WaitingViewMyRecordTitle".localized())
+                        .style(.heading3_Bold)
+                    Spacer()
+                }
+                
+                List {
+                    ForEach(viewModel.history) { record in
+                        HStack {
+                            Text("\(record.date!.historyForm)")
+                                .style(.body2_Medium)
+                            Spacer()
+                            if record.result { Text("✅") }
+                            else { Text("❌") }
+                        }
+                    }
+                }
+                .listStyle(PlainListStyle())
             }
         }
     }

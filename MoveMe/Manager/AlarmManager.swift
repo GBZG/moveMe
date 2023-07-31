@@ -10,21 +10,18 @@ import Foundation
 final class AlarmManager: ObservableObject {
     static let instance = AlarmManager()
     var timer: Timer?
+    var alarmData: AlarmEntity?
+    
+    init() {
+        self.alarmData = CoreDataManager.instance.getAllAlarms().first
+    }
     
     func setTimer(_ currentDate: Date) {
         runTimer(currentDate.alarmTimeSetting)
     }
         
     func completeAlarm() {
-        UserDefaults.standard.set(Constant.waiting, forKey: Constant.alarmStatus)
         setTomorrowAlarm()
-    }
-    
-    func restartRecentAlarm() {
-        guard let recentAlarmDate = UserDefaults.standard.object(forKey: Constant.nextAlarm) as? Date
-        else { return }
-        
-        runTimer(recentAlarmDate.alarmTimeSetting)
     }
     
     func runAlarmImmediately() {
@@ -35,7 +32,6 @@ final class AlarmManager: ObservableObject {
 private extension AlarmManager {
     func setTomorrowAlarm() {
         let tomorrowAlarmTime = Date().tomorrow.alarmTimeSetting
-        
         runTimer(tomorrowAlarmTime)
     }
     
@@ -54,7 +50,6 @@ private extension AlarmManager {
         )
         
         RunLoop.main.add(timer!, forMode: .common)
-        UserDefaults.standard.set(date, forKey: Constant.nextAlarm)
         HapticManager.instance.hapticWithNotification(for: .success)
     }
 

@@ -45,6 +45,7 @@
 "WaitingViewChangeGuide" = "터치해서 시간을 변경할 수 있어요";
 "WaitingViewChangeDescription" = "알람 시간을 변경할 수 있어요";
 "WaitingViewChangeButtonLabel" = "완료하기";
+"WaitingViewMyRecordTitle" = "나의 기록";
 
 // RingingView
 "RingingViewTitle" = "움직일 시간이에요!";
